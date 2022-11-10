@@ -1,11 +1,11 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.MainPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for PlayOrDownload.xaml
@@ -38,14 +38,15 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
                 //DeleteOldPatches();
                 DownloadGrid.Visibility = Visibility.Hidden;
 
+                string currPath = ClientHandler.GetExpansionPath(ExpansionID);
                  //check if path to wow folder is set
-                if (!ClientHandler.IsValidExpansionPath(ExpansionID, ClientHandler.GetExpansionPath(ExpansionID)))
+                if (!ClientHandler.IsValidExpansionPath(ExpansionID, currPath))
                 {
                     PlayOrDownloadButtonSettings.IsEnabled = true;
                     PlayOrDownloadButton.IsEnabled = false;
-                    PlayOrDownloadButton.Content = "Папка не выбрана";
+                    PlayOrDownloadButton.Content = "Выберите папку";
                     InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFD8383");
-                    InfoBlock.Text = "Выберите папку с игрой!";
+                    InfoBlock.Text = "Выберите папку с игрой или папку, куда будет установлена игра целиком.";
                     GAME_STATE = (int)STATE_ENUM.INVALID_PATH;
 
                     return; // skip anything below
@@ -74,6 +75,32 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
                 GAME_STATE = (int)STATE_ENUM.NEEDS_UPDATE;
                 InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFFFFFF");
                 InfoBlock.Text = "Доступны новые обновления!";*/
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+            }
+        }
+        public void PathSelected()
+        {
+            try
+            {
+                DownloadGrid.Visibility = Visibility.Hidden;
+
+                string currPath = ClientHandler.GetExpansionPath(ExpansionID);
+                //check if path to wow folder is set
+                if (!ClientHandler.IsValidExpansionPath(ExpansionID, currPath))
+                {
+                    PlayOrDownloadButtonSettings.IsEnabled = true;
+                    PlayOrDownloadButton.IsEnabled = true;
+                    PlayOrDownloadButton.Content = "Установить игру";
+                    InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFD8383");
+                    InfoBlock.Text = "В выбраной папке нет клиента игры, хотите скачать игру?.";
+                    GAME_STATE = (int)STATE_ENUM.INVALID_PATH;
+
+                    return; // skip anything below
+                }
+                NeedsUpdate();
             }
             catch (Exception ex)
             {
@@ -143,10 +170,10 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
                                     // keep launcher window open
                                     break;
                                 case 1: // minimize to taskbar
-                                    SystemTray.magicstormLauncher.WindowState = WindowState.Minimized;
+                                    SystemTray.nightholdLauncher.WindowState = WindowState.Minimized;
                                     break;
                                 case 2: // minimize to system tray
-                                    SystemTray.magicstormLauncher.Hide();
+                                    SystemTray.nightholdLauncher.Hide();
                                     SystemTray.notifier.Visible = true;
                                     break;
                                 case 3: // shutdown launcher
@@ -164,6 +191,19 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
                             PlayOrDownloadButton.IsEnabled = false;
                             InfoBlock.Text = string.Empty;
                             PlayOrDownloadButton.Content = "ОБНОВЛЕНИЕ";
+
+                            Downloader downloader = new Downloader(this);
+                            await downloader.CreateDownloadList();
+                            downloader.DownloadUpdates();
+                            break;
+                        }
+                    case (int)STATE_ENUM.INVALID_PATH:
+                        {
+                            // start update when press the button
+                            PlayOrDownloadButtonSettings.IsEnabled = false;
+                            PlayOrDownloadButton.IsEnabled = false;
+                            InfoBlock.Text = string.Empty;
+                            PlayOrDownloadButton.Content = "Скачивание игры";
 
                             Downloader downloader = new Downloader(this);
                             await downloader.CreateDownloadList();
@@ -208,7 +248,7 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
                     {
                         ClientHandler.SaveExpansionPath(ExpansionID, fbd.SelectedPath);
                         ClientHandler.SetLocalUpdateVersion(ExpansionID, 0);
-                        UserControl_Loaded(sender, e);
+                        PathSelected();
                     }
                     else
                     {

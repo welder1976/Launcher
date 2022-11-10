@@ -1,12 +1,12 @@
-﻿using MagicStorm_Launcher.AdminPanelControls.Pages;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.AdminPanelControls.Pages;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Childs
+namespace Nighthold_Launcher.AdminPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for NewsExpansionRow.xaml

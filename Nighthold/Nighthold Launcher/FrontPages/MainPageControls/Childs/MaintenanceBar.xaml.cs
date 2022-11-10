@@ -1,8 +1,8 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.MainPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for MaintenanceNote.xaml

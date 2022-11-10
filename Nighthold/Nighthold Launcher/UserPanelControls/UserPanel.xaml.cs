@@ -1,19 +1,19 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
-using MagicStorm_Login;
+using Nighthold_Login;
 using System.Windows.Threading;
 using System;
 using System.Threading.Tasks;
-using MagicStorm_Launcher.GMPanelControls;
-using MagicStorm_Launcher.OtherWindows;
-using MagicStorm_Launcher.UserPanelControls.Childs;
-using MagicStorm_Launcher.AdminPanelControls;
-using MagicStorm_Launcher.AccountStandingBarControls.Windows;
+using Nighthold_Launcher.GMPanelControls;
+using Nighthold_Launcher.OtherWindows;
+using Nighthold_Launcher.UserPanelControls.Childs;
+using Nighthold_Launcher.AdminPanelControls;
+using Nighthold_Launcher.AccountStandingBarControls.Windows;
 
-namespace MagicStorm_Launcher.UserPanelControls
+namespace Nighthold_Launcher.UserPanelControls
 {
     /// <summary>
     /// Interaction logic for UserPanel.xaml
@@ -30,9 +30,9 @@ namespace MagicStorm_Launcher.UserPanelControls
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (MagicStormLauncher.LoginUsername != null)
+            if (NightholdLauncher.LoginUsername != null)
             {
-                AccountName.Text = MagicStormLauncher.LoginUsername.ToUpper();
+                AccountName.Text = NightholdLauncher.LoginUsername.ToUpper();
                 UpdateAccountAvatar();
                 UpdateAccountRankName();
                 UpdateGMPanelVisibility();
@@ -70,7 +70,7 @@ namespace MagicStorm_Launcher.UserPanelControls
         {
             try
             {
-                var avatarResponse = AuthClass.SelfAvatarUrl.FromJson(await AuthClass.GetSelfAvatarUrlJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var avatarResponse = AuthClass.SelfAvatarUrl.FromJson(await AuthClass.GetSelfAvatarUrlJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 if (avatarResponse.AvatarUrl.StartsWith("http") || avatarResponse.AvatarUrl.StartsWith("https"))
                 {
@@ -79,7 +79,7 @@ namespace MagicStorm_Launcher.UserPanelControls
                 }
                 else
                 {
-                    string pathToRelativeRes = avatarResponse.AvatarUrl.Replace("/MagicStorm Launcher;component/", "");
+                    string pathToRelativeRes = avatarResponse.AvatarUrl.Replace("/Nighthold Launcher;component/", "");
                     pathToRelativeRes = pathToRelativeRes.Replace(" ", "%20");
 
                     if (ToolHandler.RelativeResourceExists(pathToRelativeRes))
@@ -88,7 +88,7 @@ namespace MagicStorm_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Не удалось обновить аватар аккаунта!");
+                //ExceptionHandler.AskToReport("Не удалось обновить аватар аккаунта!");
             }
         }
 
@@ -96,7 +96,7 @@ namespace MagicStorm_Launcher.UserPanelControls
         {
             try
             {
-                var accountRankName = AuthClass.AccountRankName.FromJson(await AuthClass.GetAccountRankNameJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var accountRankName = AuthClass.AccountRankName.FromJson(await AuthClass.GetAccountRankNameJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 if (accountRankName != null)
                 {
                     TbRankName.Foreground = ToolHandler.GetColorFromHex($"#FF{accountRankName.RankColor}");
@@ -105,7 +105,7 @@ namespace MagicStorm_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Не удалось обновить уровень учетной записи!");
+                //ExceptionHandler.AskToReport("Не удалось обновить уровень учетной записи!");
             }
         }
 
@@ -113,7 +113,7 @@ namespace MagicStorm_Launcher.UserPanelControls
         {
             try
             {
-                var gmPanelVisibility = AuthClass.GMPanelAccess.FromJson(await AuthClass.GetGMPanelAccessJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var gmPanelVisibility = AuthClass.GMPanelAccess.FromJson(await AuthClass.GetGMPanelAccessJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 if (gmPanelVisibility.CanAccess)
                 {
                     SPGMpanel.Visibility = Visibility.Visible;
@@ -122,7 +122,7 @@ namespace MagicStorm_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Не удалось обновить доступ к GM панели!");
+                //ExceptionHandler.AskToReport("Не удалось обновить доступ к GM панели!");
             }
         }
 
@@ -130,7 +130,7 @@ namespace MagicStorm_Launcher.UserPanelControls
         {
             try
             {
-                var adminPanelVisibility = AuthClass.AdminPanelAccess.FromJson(await AuthClass.GetAdminPanelAccessJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var adminPanelVisibility = AuthClass.AdminPanelAccess.FromJson(await AuthClass.GetAdminPanelAccessJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 if (adminPanelVisibility.CanAccess)
                 {
                     SPAdminPanel.Visibility = Visibility.Visible;
@@ -139,7 +139,7 @@ namespace MagicStorm_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Не удалось обновить доступ к панели администратора!");
+                //ExceptionHandler.AskToReport("Не удалось обновить доступ к панели администратора!");
             }
         }
 
@@ -147,12 +147,12 @@ namespace MagicStorm_Launcher.UserPanelControls
         {
             try
             {
-                var account = AuthClass.AccountStanding.FromJson(await AuthClass.GetAccountStandingJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var account = AuthClass.AccountStanding.FromJson(await AuthClass.GetAccountStandingJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 if (account != null)
                 {
                     switch (account.Standing)
                     {
-                        case "Suspended":
+                        case "Забанен":
                             AccountState.Foreground = ToolHandler.GetColorFromHex("#FFC55F5F");
                             RtbBanTimeLeft.Visibility = Visibility.Visible;
                             AnimHandler.ScaleIn(RtbBanTimeLeft);
@@ -170,7 +170,7 @@ namespace MagicStorm_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Не удалось обновить статус аккаунта!");
+                //ExceptionHandler.AskToReport("Не удалось обновить статус аккаунта!");
             }
         }
 
@@ -178,11 +178,7 @@ namespace MagicStorm_Launcher.UserPanelControls
         {
             try
             {
-                var response = await AuthClass.GetAccountBalanceJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword);
-
-                var data = AuthClass.AccountBalanceHandler.FromJson(response);
-
-                foreach (var balance in data)
+                foreach (var balance in AuthClass.AccountBalance.FromJson(await AuthClass.GetAccountBalanceJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword)))
                 {
                     AccountDonatePoints.Text = balance.DP.ToString();
                     AccountVotePoints.Text = balance.VP.ToString();
@@ -192,7 +188,9 @@ namespace MagicStorm_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Не удалось обновить баланс аккаунта!");
+                //ExceptionHandler.AskToReport("Не удалось обновить баланс аккаунта!");
+                AccountDonatePoints.Text = " - ";
+                AccountVotePoints.Text = " - ";
             }
         }
 
@@ -200,7 +198,7 @@ namespace MagicStorm_Launcher.UserPanelControls
         {
             try
             {
-                var realmsCollection = CharClass.CharacterData.FromJson(await CharClass.GetCharactersListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var realmsCollection = CharClass.CharacterData.FromJson(await CharClass.GetCharactersListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 CharactersListPanel.Children.Clear();
 
@@ -243,11 +241,11 @@ namespace MagicStorm_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Не удалось обновить список персонажей!");
+                //ExceptionHandler.AskToReport("Не удалось обновить список персонажей!");
 
                 CharactersListPanel.Children.Add(new Label
                 {
-                    Content = "Нет персонажей",
+                    Content = "Не удалось обновить",
                     Foreground = ToolHandler.GetColorFromHex("#FF7A7A7A"),
                     Background = null,
                     FontFamily = new System.Windows.Media.FontFamily("Open Sans"),
@@ -260,10 +258,10 @@ namespace MagicStorm_Launcher.UserPanelControls
         private void UserLogoutButton_Click(object sender, RoutedEventArgs e)
         {
             ConfirmationWindow confirmation = new ConfirmationWindow("Выйти", "Вы уверены?", false);
-            confirmation.Owner = SystemTray.magicstormLauncher;
+            confirmation.Owner = SystemTray.nightholdLauncher;
             if (confirmation.ShowDialog() == true)
             {
-                Process.Start(typeof(MagicStormLogin).Assembly.GetName().Name, "True");
+                Process.Start(typeof(NightholdLogin).Assembly.GetName().Name, "True");
                 Application.Current.Shutdown();
             }
         }
@@ -271,14 +269,14 @@ namespace MagicStorm_Launcher.UserPanelControls
         private void GMPanelButton_Click(object sender, RoutedEventArgs e)
         {
             GMPanel gMPanel = new GMPanel();
-            gMPanel.Owner = SystemTray.magicstormLauncher;
+            gMPanel.Owner = SystemTray.nightholdLauncher;
             gMPanel.ShowDialog();
         }
 
         private void AdminPanelButton_Click(object sender, RoutedEventArgs e)
         {
             AdminPanel adminPanel = new AdminPanel();
-            adminPanel.Owner = SystemTray.magicstormLauncher;
+            adminPanel.Owner = SystemTray.nightholdLauncher;
             adminPanel.ShowDialog();
         }
 
@@ -287,11 +285,11 @@ namespace MagicStorm_Launcher.UserPanelControls
             try
             {
                 AvatarSelector avatarSelector = new AvatarSelector();
-                avatarSelector.Owner = SystemTray.magicstormLauncher;
+                avatarSelector.Owner = SystemTray.nightholdLauncher;
                 if (avatarSelector.ShowDialog() == true)
                 {
                     ToolHandler.SetImageSource(Avatar, avatarSelector.pAvatarPath, avatarSelector.pAvatarUriKind);
-                    await AuthClass.SetSelfAvatar(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, avatarSelector.pAvatarPath);
+                    await AuthClass.SetSelfAvatar(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, avatarSelector.pAvatarPath);
                 }
             }
             catch (Exception ex)
@@ -303,7 +301,7 @@ namespace MagicStorm_Launcher.UserPanelControls
         private void BtnAccountStanding_Click(object sender, RoutedEventArgs e)
         {
             SinsHistory sinsHistory = new SinsHistory();
-            sinsHistory.Owner = SystemTray.magicstormLauncher;
+            sinsHistory.Owner = SystemTray.nightholdLauncher;
             sinsHistory.ShowDialog();
         }
     }

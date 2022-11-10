@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MagicStorm_Launcher.FrontPages.VotePageControls"
-             xmlns:Spinners="clr-namespace:MagicStorm_Launcher.Spinners" 
-             x:Class="MagicStorm_Launcher.FrontPages.VotePageControls.VotePage" 
+             xmlns:local="clr-namespace:Nighthold_Launcher.FrontPages.VotePageControls"
+             xmlns:Spinners="clr-namespace:Nighthold_Launcher.Spinners" 
+             x:Class="Nighthold_Launcher.FrontPages.VotePageControls.VotePage" 
              mc:Ignorable="d" 
              d:DesignHeight="660" d:DesignWidth="860">
     <Grid>
@@ -23,26 +23,26 @@
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" BorderBrush="#19C5C3C2" BorderThickness="0,0,1,0">
                     <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image Source="/MagicStorm Launcher;component/Assets/Menu Icons/website_icon.png" Margin="0,0,7,0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock Text="VOTE SITE NAME" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
+                        <Image Source="/Nighthold Launcher;component/Assets/Menu Icons/website_icon.png" Margin="0,0,7,0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="VOTE SITE NAME" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
                     </WrapPanel>
                 </Border>
                 <Border Grid.Column="1" BorderBrush="#19C5C3C2" BorderThickness="1,0">
                     <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image Width="16" Source="/MagicStorm Launcher;component/Assets/Menu Icons/realm_pending.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,7,0"/>
-                        <TextBlock Text="COOLDOWN" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
+                        <Image Width="16" Source="/Nighthold Launcher;component/Assets/Menu Icons/realm_pending.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,7,0"/>
+                        <TextBlock Text="COOLDOWN" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
                     </WrapPanel>
                 </Border>
                 <Border Grid.Column="2" BorderBrush="#19C5C3C2" BorderThickness="1,0">
                     <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image Width="16" Source="/MagicStorm Launcher;component/Assets/Menu Icons/patch_notes.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,7,0"/>
-                        <TextBlock Text="VOTE LINK" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
+                        <Image Width="16" Source="/Nighthold Launcher;component/Assets/Menu Icons/patch_notes.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,7,0"/>
+                        <TextBlock Text="VOTE LINK" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
                     </WrapPanel>
                 </Border>
                 <Border Grid.Column="3" BorderBrush="#19C5C3C2" BorderThickness="1,0,0,0">
                     <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image Source="/MagicStorm Launcher;component/Assets/Menu Icons/shopping_cart.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-1,7,0" Width="16"/>
-                        <TextBlock Text="POINTS REWARD" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
+                        <Image Source="/Nighthold Launcher;component/Assets/Menu Icons/shopping_cart.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-1,7,0" Width="16"/>
+                        <TextBlock Text="POINTS REWARD" Background="{x:Null}" Foreground="#FFC5C3C2" Padding="0" FontSize="14" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontWeight="SemiBold"/>
                     </WrapPanel>
                 </Border>
             </Grid>

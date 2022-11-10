@@ -1,9 +1,9 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.MainPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for ExpansionMenuRow.xaml
@@ -24,7 +24,7 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
 
         private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            ToolHandler.SetImageSource(RowIcon, $"/MagicStorm Launcher;component/Assets/Menu Icons/{ MenuItemIcon }.png", UriKind.Relative);
+            ToolHandler.SetImageSource(RowIcon, $"/Nighthold Launcher;component/Assets/Menu Icons/{ MenuItemIcon }.png", UriKind.Relative);
             RowTextButton.Content = MenuItemText;
         }
 

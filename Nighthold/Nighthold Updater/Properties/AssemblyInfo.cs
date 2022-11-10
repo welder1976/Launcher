@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MagicStorm Updater")]
-[assembly: AssemblyDescription("Updater for MagicStorm Launcher")]
+[assembly: AssemblyTitle("Nighthold Updater")]
+[assembly: AssemblyDescription("Updater for Nighthold Launcher")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("MagicStorm")]
-[assembly: AssemblyProduct("MagicStorm Updater")]
-[assembly: AssemblyCopyright("Copyright © MagicStorm 2022")]
+[assembly: AssemblyCompany("Nighthold")]
+[assembly: AssemblyProduct("Nighthold Updater")]
+[assembly: AssemblyCopyright("Copyright © Nighthold 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

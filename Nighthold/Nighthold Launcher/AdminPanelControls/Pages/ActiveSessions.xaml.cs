@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.AdminPanelControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.AdminPanelControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Pages
+namespace Nighthold_Launcher.AdminPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for ActiveSessions.xaml
@@ -26,8 +26,8 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
         {
             try
             {
-                var activeSessionsCollection = CiSessionsClass.ActiveSessionsList.FromJson(await CiSessionsClass.GetActiveSessionsListJson(MagicStormLauncher.LoginUsername,
-                    MagicStormLauncher.LoginPassword, pAdminPanel.SecKey));
+                var activeSessionsCollection = CiSessionsClass.ActiveSessionsList.FromJson(await CiSessionsClass.GetActiveSessionsListJson(NightholdLauncher.LoginUsername,
+                    NightholdLauncher.LoginPassword, pAdminPanel.SecKey));
                 SPActiveSessions.Children.Clear();
                 if (activeSessionsCollection != null)
                 {

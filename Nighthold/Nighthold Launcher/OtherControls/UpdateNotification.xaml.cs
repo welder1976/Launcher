@@ -1,9 +1,9 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.OtherControls
+namespace Nighthold_Launcher.OtherControls
 {
     /// <summary>
     /// Interaction logic for UpdateNotification.xaml

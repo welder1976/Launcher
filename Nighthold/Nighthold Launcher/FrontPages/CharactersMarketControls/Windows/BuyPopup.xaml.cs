@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
+namespace Nighthold_Launcher.FrontPages.CharactersMarketControls.Windows
 {
     /// <summary>
     /// Interaction logic for BuyPopup.xaml
@@ -61,7 +61,7 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
 
             CharName.Text = pCharName;
 
@@ -88,8 +88,8 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
-            SystemTray.magicstormLauncher.marketPage.LoadMarketPage();
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
+            SystemTray.nightholdLauncher.marketPage.LoadMarketPage();
         }
 
         private async void BtnConfirm_Click(object sender, RoutedEventArgs e)
@@ -101,7 +101,7 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
 
             await Task.Delay(1000);
 
-            var response = CharactersMarketClass.MarketPurchaseResponse.FromJson(await CharactersMarketClass.GetMarketPurchaseResponse(pMarketID.ToString(), MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+            var response = CharactersMarketClass.MarketPurchaseResponse.FromJson(await CharactersMarketClass.GetMarketPurchaseResponse(pMarketID.ToString(), NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
             if (!response.Response) // failed transaction, print error
             {
@@ -114,8 +114,8 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
                 ResponseBlock.Foreground = Brushes.Lime;
                 ResponseBlock.Text = response.ResponseMsg;
                 BtnConfirm.IsEnabled = false;
-                SystemTray.magicstormLauncher.userPanel.UpdateAccountBalance();
-                SystemTray.magicstormLauncher.userPanel.UpdateCharactersList();
+                SystemTray.nightholdLauncher.userPanel.UpdateAccountBalance();
+                SystemTray.nightholdLauncher.userPanel.UpdateCharactersList();
             }
         }
     }

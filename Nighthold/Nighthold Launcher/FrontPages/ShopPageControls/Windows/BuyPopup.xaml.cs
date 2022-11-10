@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Windows
+namespace Nighthold_Launcher.FrontPages.ShopPageControls.Windows
 {
     /// <summary>
     /// Interaction logic for BuyPopup.xaml
@@ -52,7 +52,7 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Windows
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
 
             switch (pCategory)
             {
@@ -103,7 +103,7 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Windows
             // get characters list if necessary based on the category type
             try
             {
-                var realmsCollection = CharClass.RealmCharacterData.FromJson(await CharClass.GetRealmCharactersListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pRealmId.ToString()));
+                var realmsCollection = CharClass.RealmCharacterData.FromJson(await CharClass.GetRealmCharactersListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pRealmId.ToString()));
 
                 ComboBox1_ac.Items.Clear();
 
@@ -158,7 +158,7 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Windows
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
 
         private void SPGoldCoin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -191,14 +191,14 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Windows
             }
 
             string playerName = ((ComboBoxItem)ComboBox1_ac.SelectedItem).Tag.ToString();
-            string accountName = MagicStormLauncher.LoginUsername;
+            string accountName = NightholdLauncher.LoginUsername;
 
             ResponseBlock.Foreground = Brushes.Orange;
             ResponseBlock.Text = "Processing your request..";
 
             await Task.Delay(2000);
 
-            var response = AuthClass.ShopPurchaseResponse.FromJson(await AuthClass.GetShopPurchaseResponse(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword,
+            var response = AuthClass.ShopPurchaseResponse.FromJson(await AuthClass.GetShopPurchaseResponse(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword,
                 pId.ToString(), currencyType, playerName, accountName));
 
             if (!response.Response) // failed transaction, print error
@@ -212,7 +212,7 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Windows
                 ResponseBlock.Foreground = Brushes.Lime;
                 ResponseBlock.Text = response.ResponseMsg;
                 BtnConfirm.IsEnabled = false;
-                SystemTray.magicstormLauncher.userPanel.UpdateAccountBalance();
+                SystemTray.nightholdLauncher.userPanel.UpdateAccountBalance();
                 // closing window in 7 seconds
             }
         }

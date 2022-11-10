@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Xml;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.MainPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for NavbarButton.xaml
@@ -163,7 +163,7 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
                         {
                             Content = "Нет новостей!",
                             Foreground = ToolHandler.GetColorFromHex("#FF919191"),
-                            FontFamily = new System.Windows.Media.FontFamily("/MagicStorm Launcher;component/Assets/Font/#Open Sans"),
+                            FontFamily = new System.Windows.Media.FontFamily("/Nighthold Launcher;component/Assets/Font/#Open Sans"),
                             FontSize = 14
                         });
                     }
@@ -244,47 +244,47 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
             {
                 case 1: // classic
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_classic_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_classic_logo.png", UriKind.Relative);
                     break;
                 }
                 case 2: // tbc
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_tbc_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_tbc_logo.png", UriKind.Relative);
                     break;
                 }
                 case 3: // wotlk
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_wotlk_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_wotlk_logo.png", UriKind.Relative);
                     break;
                 }
                 case 4: // cata
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_cata_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_cata_logo.png", UriKind.Relative);
                     break;
                 }
                 case 5: // mop
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_mop_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_mop_logo.png", UriKind.Relative);
                     break;
                 }
                 case 6: // wod
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_wod_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_wod_logo.png", UriKind.Relative);
                     break;
                 }
                 case 7: // legion
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_legion_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_legion_logo.png", UriKind.Relative);
                     break;
                 }
                 case 8: // bfa
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_bfa_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_bfa_logo.png", UriKind.Relative);
                     break;
                 }
                 case 9: // shadowlands
                 {
-                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/MagicStorm Launcher;component/Assets/Logos/wow_sl_logo.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(mainPage.WoWLogo, "/Nighthold Launcher;component/Assets/Logos/wow_sl_logo.png", UriKind.Relative);
                     break;
                 }
                 default:

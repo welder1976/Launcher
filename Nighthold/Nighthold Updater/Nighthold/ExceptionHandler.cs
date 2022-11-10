@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Windows;
 
-namespace MagicStorm_Updater.Nighthold
+namespace Nighthold_Updater.Nighthold
 {
     class ExceptionHandler
     {

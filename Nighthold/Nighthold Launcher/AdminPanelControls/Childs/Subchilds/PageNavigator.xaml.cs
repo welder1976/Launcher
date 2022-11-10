@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Childs.Subchilds
+namespace Nighthold_Launcher.AdminPanelControls.Childs.Subchilds
 {
     /// <summary>
     /// Interaction logic for PageNavigator.xaml

@@ -1,6 +1,6 @@
-﻿using MagicStorm_Launcher.AdminPanelControls.Childs;
-using MagicStorm_Launcher.AdminPanelControls.Childs.Subchilds;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.AdminPanelControls.Childs;
+using Nighthold_Launcher.AdminPanelControls.Childs.Subchilds;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Pages
+namespace Nighthold_Launcher.AdminPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for SoapLogs.xaml
@@ -32,8 +32,8 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
         {
             try
             {
-                soapLogs = GameMasterClass.SoapLogs.FromJson(await GameMasterClass.GetSoapLogsJson(MagicStormLauncher.LoginUsername,
-                    MagicStormLauncher.LoginPassword, pAdminPanel.SecKey));
+                soapLogs = GameMasterClass.SoapLogs.FromJson(await GameMasterClass.GetSoapLogsJson(NightholdLauncher.LoginUsername,
+                    NightholdLauncher.LoginPassword, pAdminPanel.SecKey));
 
                 SPSoapLogs.Children.Clear();
 

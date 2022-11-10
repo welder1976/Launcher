@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows;
 using WebHandler;
 
-namespace MagicStorm_Login.Nighthold
+namespace Nighthold_Login.Nighthold
 {
     class ExceptionHandler
     {

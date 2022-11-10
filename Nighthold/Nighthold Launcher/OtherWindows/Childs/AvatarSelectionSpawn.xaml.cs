@@ -1,11 +1,11 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace MagicStorm_Launcher.OtherWindows.Childs
+namespace Nighthold_Launcher.OtherWindows.Childs
 {
     /// <summary>
     /// Interaction logic for AvatarSelectionSpawn.xaml
@@ -27,7 +27,7 @@ namespace MagicStorm_Launcher.OtherWindows.Childs
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             if (!pIsDBAvatar)
-                ToolHandler.SetImageSource(imgAvatar, $"/MagicStorm Launcher;component/{pAvatarPath}", UriKind.Relative);
+                ToolHandler.SetImageSource(imgAvatar, $"/Nighthold Launcher;component/{pAvatarPath}", UriKind.Relative);
             else
                 ToolHandler.SetImageSource(imgAvatar, pAvatarPath, UriKind.Absolute);
         }
@@ -41,7 +41,7 @@ namespace MagicStorm_Launcher.OtherWindows.Childs
 
             chkAvatar.IsChecked = !chkAvatar.IsChecked;
 
-            pAvatarSelector.pAvatarPath = pIsDBAvatar ? pAvatarPath : $"/MagicStorm Launcher;component/{pAvatarPath}";
+            pAvatarSelector.pAvatarPath = pIsDBAvatar ? pAvatarPath : $"/Nighthold Launcher;component/{pAvatarPath}";
             pAvatarSelector.pAvatarUriKind = pIsDBAvatar ? UriKind.Absolute : UriKind.Relative;
         }
 

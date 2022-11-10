@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="XMLDocumentUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://launcher.magic-storm.ru/Config.xml</Value>
+      <Value Profile="(Default)">https://launcher.nighthold.ru/Config.xml</Value>
     </Setting>
     <Setting Name="BuyDPUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://nighthold.pro/dashboard/payment/add</Value>
+      <Value Profile="(Default)">https://nighthold.ru/dashboard/payment/add</Value>
     </Setting>
     <Setting Name="ServerName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Magic-Storm</Value>
+      <Value Profile="(Default)">Nighthold</Value>
     </Setting>
     <Setting Name="WindowSizeWidth" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Childs.Subchilds
+namespace Nighthold_Launcher.AdminPanelControls.Childs.Subchilds
 {
     /// <summary>
     /// Interaction logic for PageNumber.xaml

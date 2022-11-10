@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace MagicStorm_Login.Nighthold
+namespace Nighthold_Login.Nighthold
 {
     class AnimHandler
     {

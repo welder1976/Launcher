@@ -1,10 +1,10 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.MainPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for Article.xaml

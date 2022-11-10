@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
+namespace Nighthold_Launcher.FrontPages.CharactersMarketControls.Windows
 {
     /// <summary>
     /// Interaction logic for SellPopup.xaml
@@ -42,22 +42,22 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
 
             UpdateCharactersList();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
-            SystemTray.magicstormLauncher.marketPage.LoadMarketPage();
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
+            SystemTray.nightholdLauncher.marketPage.LoadMarketPage();
         }
 
         public async void UpdateCharactersList()
         {
             try
             {
-                var realmsCollection = CharactersMarketClass.OwnCharactersList.FromJson(await CharactersMarketClass.GetOwnCharactersListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var realmsCollection = CharactersMarketClass.OwnCharactersList.FromJson(await CharactersMarketClass.GetOwnCharactersListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 CBoxAllCharacters.Items.Clear();
 
@@ -152,7 +152,7 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
 
                 int.TryParse(PriceDP.Text, out int priceDP);
 
-                var response = CharactersMarketClass.MarketSellResponse.FromJson(await CharactersMarketClass.GetMarketSellResponse(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword,
+                var response = CharactersMarketClass.MarketSellResponse.FromJson(await CharactersMarketClass.GetMarketSellResponse(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword,
                     CBSelectedChar.pGuid.ToString(), priceDP.ToString(), CBSelectedChar.pRealmID.ToString()));
 
                 if (!response.Response) // failed transaction, print error
@@ -166,8 +166,8 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows
                     ResponseBlock.Foreground = Brushes.Lime;
                     ResponseBlock.Text = response.ResponseMsg;
                     BtnConfirm.IsEnabled = false;
-                    SystemTray.magicstormLauncher.userPanel.UpdateAccountBalance();
-                    SystemTray.magicstormLauncher.userPanel.UpdateCharactersList();
+                    SystemTray.nightholdLauncher.userPanel.UpdateAccountBalance();
+                    SystemTray.nightholdLauncher.userPanel.UpdateCharactersList();
                 }
             }
             catch (Exception)

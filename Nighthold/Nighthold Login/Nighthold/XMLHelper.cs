@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows;
 using System.Xml;
 
-namespace MagicStorm_Login.Nighthold
+namespace Nighthold_Login.Nighthold
 {
     class XMLHelper
     {

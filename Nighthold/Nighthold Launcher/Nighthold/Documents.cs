@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class Documents
     {

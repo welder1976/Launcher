@@ -1,9 +1,9 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.GMPanelControls.Childs
+namespace Nighthold_Launcher.GMPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for BanRow.xaml

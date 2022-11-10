@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -6,7 +6,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using WebHandler;
 
-namespace MagicStorm_Launcher.NotificationsBarControls.Windows
+namespace Nighthold_Launcher.NotificationsBarControls.Windows
 {
     /// <summary>
     /// Interaction logic for NotificationPopup.xaml
@@ -97,11 +97,11 @@ namespace MagicStorm_Launcher.NotificationsBarControls.Windows
         {
             Close();
 
-            SystemTray.magicstormLauncher.notificationsBar.NotificationPopups.Remove(this);
+            SystemTray.nightholdLauncher.notificationsBar.NotificationPopups.Remove(this);
 
             RepositionNotifications();
 
-            await NotificationsClass.MarkNotificationAsRead(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pNotificationID.ToString());
+            await NotificationsClass.MarkNotificationAsRead(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pNotificationID.ToString());
 
             RecountNotifications();
         }
@@ -110,7 +110,7 @@ namespace MagicStorm_Launcher.NotificationsBarControls.Windows
         {
             int index = 0;
 
-            foreach (NotificationPopup notification in SystemTray.magicstormLauncher.notificationsBar.NotificationPopups)
+            foreach (NotificationPopup notification in SystemTray.nightholdLauncher.notificationsBar.NotificationPopups)
             {
                 if (notification.IsVisible)
                 {
@@ -145,27 +145,27 @@ namespace MagicStorm_Launcher.NotificationsBarControls.Windows
 
         private void RecountNotifications()
         {
-            int pNotificationsCount = SystemTray.magicstormLauncher.notificationsBar.NotificationPopups.Count;
+            int pNotificationsCount = SystemTray.nightholdLauncher.notificationsBar.NotificationPopups.Count;
 
             if (pNotificationsCount > 0)
             {
-                SystemTray.magicstormLauncher.notificationsBar.BellOff.Visibility = Visibility.Collapsed;
-                SystemTray.magicstormLauncher.notificationsBar.BellOn.Visibility = Visibility.Visible;
+                SystemTray.nightholdLauncher.notificationsBar.BellOff.Visibility = Visibility.Collapsed;
+                SystemTray.nightholdLauncher.notificationsBar.BellOn.Visibility = Visibility.Visible;
 
-                SystemTray.magicstormLauncher.notificationsBar.BtnNotificationsOff.Visibility = Visibility.Collapsed;
-                SystemTray.magicstormLauncher.notificationsBar.BtnNotificationsOn.Visibility = Visibility.Visible;
+                SystemTray.nightholdLauncher.notificationsBar.BtnNotificationsOff.Visibility = Visibility.Collapsed;
+                SystemTray.nightholdLauncher.notificationsBar.BtnNotificationsOn.Visibility = Visibility.Visible;
 
-                SystemTray.magicstormLauncher.notificationsBar.BtnNotificationsOn.Content = $"{pNotificationsCount} notifications";
+                SystemTray.nightholdLauncher.notificationsBar.BtnNotificationsOn.Content = $"{pNotificationsCount} notifications";
             }
             else
             {
-                SystemTray.magicstormLauncher.notificationsBar.BellOff.Visibility = Visibility.Visible;
-                SystemTray.magicstormLauncher.notificationsBar.BellOn.Visibility = Visibility.Collapsed;
+                SystemTray.nightholdLauncher.notificationsBar.BellOff.Visibility = Visibility.Visible;
+                SystemTray.nightholdLauncher.notificationsBar.BellOn.Visibility = Visibility.Collapsed;
 
-                SystemTray.magicstormLauncher.notificationsBar.BtnNotificationsOff.Visibility = Visibility.Visible;
-                SystemTray.magicstormLauncher.notificationsBar.BtnNotificationsOn.Visibility = Visibility.Collapsed;
+                SystemTray.nightholdLauncher.notificationsBar.BtnNotificationsOff.Visibility = Visibility.Visible;
+                SystemTray.nightholdLauncher.notificationsBar.BtnNotificationsOn.Visibility = Visibility.Collapsed;
 
-                SystemTray.magicstormLauncher.notificationsBar.BtnNotificationsOff.Content = $"{pNotificationsCount} notifications";
+                SystemTray.nightholdLauncher.notificationsBar.BtnNotificationsOff.Content = $"{pNotificationsCount} notifications";
             }
         }
     }

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls.Windows
+namespace Nighthold_Launcher.FrontPages.MainPageControls.Windows
 {
     /// <summary>
     /// Interaction logic for ClientPathWindow.xaml

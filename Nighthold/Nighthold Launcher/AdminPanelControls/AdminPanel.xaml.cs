@@ -1,13 +1,13 @@
 ﻿
-using MagicStorm_Launcher.AdminPanelControls.Pages;
-using MagicStorm_Launcher.Nighthold;
+using Nighthold_Launcher.AdminPanelControls.Pages;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls
+namespace Nighthold_Launcher.AdminPanelControls
 {
     /// <summary>
     /// Interaction logic for AdminPanel.xaml
@@ -23,7 +23,7 @@ namespace MagicStorm_Launcher.AdminPanelControls
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
             AnimHandler.FadeIn(this, 1000);
             SecurityKeyForm.Visibility = Visibility.Visible;
             SecurityKey.Focus();
@@ -31,7 +31,7 @@ namespace MagicStorm_Launcher.AdminPanelControls
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -134,7 +134,7 @@ namespace MagicStorm_Launcher.AdminPanelControls
 
             try
             {
-                var secPa = AuthClass.SecPaResponse.FromJson(await AuthClass.GetSecPResponseJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, ToolHandler.StringToMD5(SecurityKey.Password)));
+                var secPa = AuthClass.SecPaResponse.FromJson(await AuthClass.GetSecPResponseJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, ToolHandler.StringToMD5(SecurityKey.Password)));
                 SecurityKey.IsEnabled = true;
                 LoadingSpinner.Visibility = Visibility.Collapsed;
                 
@@ -148,7 +148,7 @@ namespace MagicStorm_Launcher.AdminPanelControls
                         PanelGrid.Children.Clear();
                         PanelGrid.Children.Add(new NewsManager(this));
 
-                        ShowActionMessage($"Welcome {MagicStormLauncher.LoginUsername} buddy, you are a part of the admin staff. What are you up to?");
+                        ShowActionMessage($"Welcome {NightholdLauncher.LoginUsername} buddy, you are a part of the admin staff. What are you up to?");
                     }
                     else
                     {

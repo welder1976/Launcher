@@ -1,6 +1,6 @@
-﻿using MagicStorm_Launcher.AdminPanelControls.Childs;
-using MagicStorm_Launcher.AdminPanelControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.AdminPanelControls.Childs;
+using Nighthold_Launcher.AdminPanelControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Xml;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Pages
+namespace Nighthold_Launcher.AdminPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for NewsManager.xaml
@@ -76,7 +76,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
                 {
                     pAdminPanel.ShowActionMessage($"Creating article \"{editor.ArticleTitle.Text}\" for expansion \"{ToolHandler.ExpansionIdToName(SelectedExpansion)}\".");
 
-                    var json = NewsClass.ArticleCreate.FromJson(await NewsClass.GetArticleCreateResponseJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAdminPanel.SecKey,
+                    var json = NewsClass.ArticleCreate.FromJson(await NewsClass.GetArticleCreateResponseJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAdminPanel.SecKey,
                         SelectedExpansion.ToString(), editor.ArticleTitle.Text, editor.ArticleUrl.Text, editor.ImageUrl.Text));
 
                     pAdminPanel.ShowActionMessage(json.ResponseMsg);

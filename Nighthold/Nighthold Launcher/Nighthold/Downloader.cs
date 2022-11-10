@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.FrontPages.MainPageControls.Childs;
+﻿using Nighthold_Launcher.FrontPages.MainPageControls.Childs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WebHandler;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class Downloader
     {

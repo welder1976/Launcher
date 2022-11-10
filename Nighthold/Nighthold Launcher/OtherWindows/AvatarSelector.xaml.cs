@@ -1,16 +1,15 @@
-﻿using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows.Childs;
+﻿using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows.Childs;
 using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
-using System.Threading.Tasks;
 using System.Windows;
 using WebHandler;
 
-namespace MagicStorm_Launcher.OtherWindows
+namespace Nighthold_Launcher.OtherWindows
 {
     /// <summary>
     /// Interaction logic for AvatarSelector.xaml
@@ -32,10 +31,27 @@ namespace MagicStorm_Launcher.OtherWindows
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
 
             // Load DB avatars
-            // await LoadAvatar();
+            try
+            {
+                var dbAvatarsCollection = AuthClass.DBAvatarsList.FromJson(await AuthClass.GetDBAvatarsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
+
+                WPAvatars.Children.Clear();
+
+                if (dbAvatarsCollection != null)
+                {
+                    foreach (var avatar in dbAvatarsCollection)
+                    {
+                        WPAvatars.Children.Add(new AvatarSelectionSpawn(this, avatar.Url.Replace("%20", " "), true));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+            }
 
 
             // Load Race Icons into the avatars list
@@ -64,31 +80,9 @@ namespace MagicStorm_Launcher.OtherWindows
             }
         }
 
-        private async Task LoadAvatar()
-        {
-            try
-            {
-                var dbAvatarsCollection = AuthClass.DBAvatarsList.FromJson(await AuthClass.GetDBAvatarsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
-
-                WPAvatars.Children.Clear();
-
-                if (dbAvatarsCollection != null)
-                {
-                    foreach (var avatar in dbAvatarsCollection)
-                    {
-                        WPAvatars.Children.Add(new AvatarSelectionSpawn(this, avatar.Url.Replace("%20", " "), true));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
-            }
-        }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
     }
 }

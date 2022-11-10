@@ -1,12 +1,12 @@
-﻿using MagicStorm_Launcher.NotificationsBarControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.NotificationsBarControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using WebHandler;
 
-namespace MagicStorm_Launcher.NotificationsBarControls.Windows
+namespace Nighthold_Launcher.NotificationsBarControls.Windows
 {
     /// <summary>
     /// Interaction logic for NotificationsWindow.xaml
@@ -30,21 +30,21 @@ namespace MagicStorm_Launcher.NotificationsBarControls.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
             LoadNotifications();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            SystemTray.magicstormLauncher.notificationsBar.UpdateVisualNotificationsCount();
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            SystemTray.nightholdLauncher.notificationsBar.UpdateVisualNotificationsCount();
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
 
         public async void LoadNotifications()
         {
             try
             {
-                var notificationsCollection = NotificationsClass.NotificationsList.FromJson(await NotificationsClass.GetNotificationsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var notificationsCollection = NotificationsClass.NotificationsList.FromJson(await NotificationsClass.GetNotificationsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 SPNotifications.Children.Clear();
                 if (notificationsCollection != null)
                 {

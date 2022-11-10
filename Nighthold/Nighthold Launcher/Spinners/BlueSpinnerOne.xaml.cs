@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.Spinners
+namespace Nighthold_Launcher.Spinners
 {
     /// <summary>
     /// Interaction logic for BlueSpinnerOne.xaml

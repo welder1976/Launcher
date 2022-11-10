@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.GMPanelControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.GMPanelControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.GMPanelControls.Pages
+namespace Nighthold_Launcher.GMPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for BansManager.xaml
@@ -28,7 +28,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
 
             try
             {
-                var banTypesCollection = GameMasterClass.AllBansList.FromJson(await GameMasterClass.GetAllBansListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var banTypesCollection = GameMasterClass.AllBansList.FromJson(await GameMasterClass.GetAllBansListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 SPBans.Children.Clear();
 
                 if (banTypesCollection != null)
@@ -127,7 +127,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
 
             try
             {
-                NewBan ban = new NewBan() { Owner = SystemTray.magicstormLauncher };
+                NewBan ban = new NewBan() { Owner = SystemTray.nightholdLauncher };
                 if (ban.ShowDialog() == true)
                 {
                     if (ban.pBanType == 0)
@@ -137,7 +137,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
                         (
                             await GameMasterClass.GetBanAccountJson
                             (
-                                MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, ban.pAccOrCharacterName, ban.pBanTime, ban.pBanReason, ban.pRealmId.ToString())
+                                NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, ban.pAccOrCharacterName, ban.pBanTime, ban.pBanReason, ban.pRealmId.ToString())
                             ).ResponseMsg
                         );
 
@@ -150,7 +150,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
                         (
                             await GameMasterClass.GetBanCharacterJson
                             (
-                                MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, ban.pAccOrCharacterName, ban.pBanTime, ban.pBanReason, ban.pRealmId.ToString())
+                                NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, ban.pAccOrCharacterName, ban.pBanTime, ban.pBanReason, ban.pRealmId.ToString())
                             ).ResponseMsg
                         );
 

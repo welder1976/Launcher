@@ -1,14 +1,14 @@
-﻿using MagicStorm_Launcher.AdminPanelControls.Pages;
-using MagicStorm_Launcher.AdminPanelControls.Windows;
-using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows;
+﻿using Nighthold_Launcher.AdminPanelControls.Pages;
+using Nighthold_Launcher.AdminPanelControls.Windows;
+using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Childs
+namespace Nighthold_Launcher.AdminPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for NewsExpansionArticle.xaml
@@ -59,7 +59,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Childs
                 {
                     pNewsManager.pAdminPanel.ShowActionMessage($"Editing article \"{editor.ArticleTitle.Text}\" for expansion \"{ToolHandler.ExpansionIdToName(pExpansionId)}\".");
 
-                    var json = NewsClass.ArticleEdit.FromJson(await NewsClass.GetArticleEditResponseJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pNewsManager.pAdminPanel.SecKey,
+                    var json = NewsClass.ArticleEdit.FromJson(await NewsClass.GetArticleEditResponseJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pNewsManager.pAdminPanel.SecKey,
                         pArticleId.ToString(), pExpansionId.ToString(), editor.ArticleTitle.Text, editor.ArticleUrl.Text, editor.ImageUrl.Text));
 
                     pNewsManager.pAdminPanel.ShowActionMessage(json.ResponseMsg);
@@ -78,12 +78,12 @@ namespace MagicStorm_Launcher.AdminPanelControls.Childs
             try
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Delete article", $"Sure you want to delete this article?\r\n<{pArticleTitle}>", false, false, null, pNewsManager.pAdminPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pNewsManager.pAdminPanel.ShowActionMessage($"Deleting article \"{pArticleTitle}\" from expansion \"{ToolHandler.ExpansionIdToName(pExpansionId)}\"");
 
-                    var json = NewsClass.ArticleDelete.FromJson(await NewsClass.GetArticleDeleteResponseJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pNewsManager.pAdminPanel.SecKey,
+                    var json = NewsClass.ArticleDelete.FromJson(await NewsClass.GetArticleDeleteResponseJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pNewsManager.pAdminPanel.SecKey,
                         pArticleId.ToString(), pExpansionId.ToString()));
 
                     pNewsManager.pAdminPanel.ShowActionMessage(json.ResponseMsg);

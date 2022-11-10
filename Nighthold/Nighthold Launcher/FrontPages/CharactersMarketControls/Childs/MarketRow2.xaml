@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs.MarketRow2"
+﻿<UserControl x:Class="Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs.MarketRow2"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs"
+             xmlns:local="clr-namespace:Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="835" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" FontSize="14" Foreground="White" Background="#FF212121" Height="80" Margin="25,10,0,0" Loaded="UserControl_Loaded">
+             d:DesignHeight="100" d:DesignWidth="835" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" FontSize="14" Foreground="White" Background="#FF212121" Height="80" Margin="25,10,0,0" Loaded="UserControl_Loaded">
     <Border BorderThickness="1" BorderBrush="#FF323232">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -17,28 +17,28 @@
             </Grid.ColumnDefinitions>
             <!--AVATAR COLUMN-->
             <Grid Grid.Column="0" Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
-                <Image x:Name="CharRaceImg" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Source="/MagicStorm Launcher;component/Assets/Race Icons/Charactercreate-races_lightforged-female.png"/>
+                <Image x:Name="CharRaceImg" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Source="/Nighthold Launcher;component/Assets/Race Icons/Charactercreate-races_lightforged-female.png"/>
             </Grid>
             <!--SECOND COLUMN-->
             <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/MagicStorm Launcher;component/Assets/CharactersMarket/market_alliance_icon.png" Width="15" Height="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Source="/Nighthold Launcher;component/Assets/CharactersMarket/market_alliance_icon.png" Width="15" Height="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock x:Name="CharName" Text="Luthiel" Foreground="#FFB4B4B4" Margin="7,0,0,0" FontWeight="Bold"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <Image x:Name="CharClassImg" HorizontalAlignment="Left" Height="15" VerticalAlignment="Center" Width="15" Source="/MagicStorm Launcher;component/Assets/Class Icons/Charactercreate-class_demonhunter.png"/>
+                    <Image x:Name="CharClassImg" HorizontalAlignment="Left" Height="15" VerticalAlignment="Center" Width="15" Source="/Nighthold Launcher;component/Assets/Class Icons/Charactercreate-class_demonhunter.png"/>
                     <TextBlock x:Name="CharClass" Text="Demon Hunter" Foreground="#FFA330C9" Margin="7,0,0,0"/>
                 </StackPanel>
             </StackPanel>
             <!--THIRD COLUMN-->
             <StackPanel Grid.Column="2" VerticalAlignment="Center" Margin="10,0">
                 <StackPanel Orientation="Horizontal">
-                    <Image HorizontalAlignment="Left" Height="15" VerticalAlignment="Center" Width="15" Source="/MagicStorm Launcher;component/Assets/CharactersMarket/gold_icon_25.png" Margin="0,3,0,0"/>
+                    <Image HorizontalAlignment="Left" Height="15" VerticalAlignment="Center" Width="15" Source="/Nighthold Launcher;component/Assets/CharactersMarket/gold_icon_25.png" Margin="0,3,0,0"/>
                     <TextBlock x:Name="CharPriceDP" Text="1500" Foreground="#FFFFC177" Margin="7,0,0,0"/>
                     <TextBlock Text="DP" Foreground="#FFFFC177" Margin="4,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <Image Source="/MagicStorm Launcher;component/Assets/CharactersMarket/arrow_up_25.png" Height="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Stretch="Fill"/>
+                    <Image Source="/Nighthold Launcher;component/Assets/CharactersMarket/arrow_up_25.png" Height="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Stretch="Fill"/>
                     <TextBlock Text="Level" Foreground="#FFB4B4B4" Margin="7,0,0,0"/>
                     <TextBlock x:Name="CharLevel" Text="80" Foreground="#FFB4B4B4" Margin="4,0,0,0"/>
                 </StackPanel>
@@ -46,7 +46,7 @@
             <!--FOURTH COLUMN-->
             <StackPanel Grid.Column="3" VerticalAlignment="Top" Margin="10,15,10,0">
                 <WrapPanel Orientation="Horizontal">
-                    <Image HorizontalAlignment="Left" Height="15" VerticalAlignment="Top" Width="15" Source="/MagicStorm Launcher;component/Assets/CharactersMarket/lightning_icon_25.png" Margin="0,4,0,0"/>
+                    <Image HorizontalAlignment="Left" Height="15" VerticalAlignment="Top" Width="15" Source="/Nighthold Launcher;component/Assets/CharactersMarket/lightning_icon_25.png" Margin="0,4,0,0"/>
                     <TextBlock x:Name="RealmName" Text="unknown realm" Foreground="#FFDEDEDE" Margin="7,0,0,0" TextWrapping="Wrap"/>
                 </WrapPanel>
             </StackPanel>

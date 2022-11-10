@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MagicStorm_Login.Properties {
+namespace Nighthold_Login.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,7 +25,7 @@ namespace MagicStorm_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Magic-Storm")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Nighthold")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -34,7 +34,7 @@ namespace MagicStorm_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://nighthold.pro/register")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://nighthold.ru/register")]
         public string RegisterAccountUrl {
             get {
                 return ((string)(this["RegisterAccountUrl"]));
@@ -43,7 +43,7 @@ namespace MagicStorm_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://nighthold.pro/forgot-password")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://nighthold.ru/forgot-password")]
         public string ResetPasswordUrl {
             get {
                 return ((string)(this["ResetPasswordUrl"]));

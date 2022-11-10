@@ -1,6 +1,6 @@
-﻿using MagicStorm_Launcher.GMPanelControls.Subchilds;
-using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows;
+﻿using Nighthold_Launcher.GMPanelControls.Subchilds;
+using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.GMPanelControls.Childs
+namespace Nighthold_Launcher.GMPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for TicketRow.xaml
@@ -84,9 +84,9 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             try
             {
                 if (ToolHandler.IsAlliance(pPlayerRace))
-                    ToolHandler.SetImageSource(FactionBackground, "/MagicStorm Launcher;component/Assets/pinfo/pinfo_alliance_bg.jpg", UriKind.Relative);
+                    ToolHandler.SetImageSource(FactionBackground, "/Nighthold Launcher;component/Assets/pinfo/pinfo_alliance_bg.jpg", UriKind.Relative);
                 else
-                    ToolHandler.SetImageSource(FactionBackground, "/MagicStorm Launcher;component/Assets/pinfo/pinfo_horde_bg.jpg", UriKind.Relative);
+                    ToolHandler.SetImageSource(FactionBackground, "/Nighthold Launcher;component/Assets/pinfo/pinfo_horde_bg.jpg", UriKind.Relative);
 
                 AccountName.Content = pAccountName;
 
@@ -167,7 +167,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             try
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Kick игрока", $"Вы уверены что хотите исключить из игры игрока {pPlayerName}? Игрок должен быть онлайн, чтобы работать.", false, false, pGMPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pGMPanel.ShowActionMessage($"Исключаем из игры игрока [{pPlayerName}] в мире [{pRealmName}].");
@@ -176,7 +176,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                     (
                         await GameMasterClass.GetKickPlayerJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pPlayerName, pRealmId.ToString())
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pPlayerName, pRealmId.ToString())
                         ).ResponseMsg
                     );
 
@@ -194,7 +194,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             try
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Починить игрока", $"Вы уверены что хотите починить игрока {pPlayerName}? Игрок должен быть онлайн, чтобы работать.", false, false, pGMPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pGMPanel.ShowActionMessage($"Починка [{pPlayerName}] в мире [{pRealmName}].");
@@ -203,7 +203,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                     (
                         await GameMasterClass.GetUnstuckPlayerJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pPlayerName, pRealmId.ToString())
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pPlayerName, pRealmId.ToString())
                         ).ResponseMsg
                     );
 

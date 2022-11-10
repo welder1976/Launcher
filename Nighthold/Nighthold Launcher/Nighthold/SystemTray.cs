@@ -1,16 +1,16 @@
 ﻿using System.Windows.Forms;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class SystemTray
     {
         public static NotifyIcon notifier = new NotifyIcon();
 
-        public static MagicStormLauncher magicstormLauncher;
+        public static NightholdLauncher nightholdLauncher;
 
-        public SystemTray(MagicStormLauncher _nightholdLauncher)
+        public SystemTray(NightholdLauncher _nightholdLauncher)
         {
-            magicstormLauncher = _nightholdLauncher;
+            nightholdLauncher = _nightholdLauncher;
         }
     }
 }

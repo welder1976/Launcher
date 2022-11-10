@@ -1,8 +1,8 @@
-﻿namespace MagicStorm_Updater
+﻿namespace Nighthold_Updater
 {
     public class Config // Nighthold UPDATER CONFIG
     {
-        private static readonly string LauncherAPIUrl = "https://launcher.magic-storm.ru"; // DO NOT ADD "/" AT THE END OF THE URL
+        private static readonly string LauncherAPIUrl = "https://launcher.nighthold.ru"; // DO NOT ADD "/" AT THE END OF THE URL
 
         /* -----------------------------------------------------------------------------------------------------------------
 

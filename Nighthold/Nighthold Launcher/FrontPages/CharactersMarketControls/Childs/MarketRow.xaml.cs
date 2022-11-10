@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.CharactersMarketControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs
+namespace Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs
 {
     /// <summary>
     /// Interaction logic for MarketRow.xaml
@@ -77,7 +77,7 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs
         private void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
             BuyPopup buyPopup = new BuyPopup(pMarketID, pGuid, pCharName, pClass, pRace, pGender, pLevel, pPriceDP, pRealmID, pRealmName);
-            buyPopup.Owner = SystemTray.magicstormLauncher;
+            buyPopup.Owner = SystemTray.nightholdLauncher;
             buyPopup.ShowDialog();
         }
     }

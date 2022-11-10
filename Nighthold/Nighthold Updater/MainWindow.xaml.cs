@@ -1,4 +1,4 @@
-﻿using MagicStorm_Updater.Nighthold;
+﻿using Nighthold_Updater.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace MagicStorm_Updater
+namespace Nighthold_Updater
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -49,7 +49,7 @@ namespace MagicStorm_Updater
                 }
                 else
                 {
-                    Process.Start("MagicStorm Login.exe");
+                    Process.Start("Nighthold Login.exe");
                     Application.Current.Shutdown();
                 }
             }

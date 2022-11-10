@@ -1,12 +1,12 @@
-﻿using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows;
+﻿using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.GMPanelControls.Childs
+namespace Nighthold_Launcher.GMPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for BanRow.xaml
@@ -79,18 +79,18 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                 if (pBanType == 1)
                 {
                     ConfirmationWindow confirmation = new ConfirmationWindow("Снять блокировку аккаунта", $"Вы хотите снять блкировку аккаунта [{pAccOrCharName}]?", false, false, pGMPanel);
-                    confirmation.Owner = SystemTray.magicstormLauncher;
+                    confirmation.Owner = SystemTray.nightholdLauncher;
                     if (confirmation.ShowDialog() == true)
                     {
                         pGMPanel.ShowActionMessage($"Снимаем бан аккаунту [{pAccOrCharName}].");
-                        await GameMasterClass.UnbanAccount(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAccOrCharName);
+                        await GameMasterClass.UnbanAccount(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAccOrCharName);
                         pGMPanel.ShowBansPage();
                     }
                 }
                 else
                 {
                     ConfirmationWindow confirmation = new ConfirmationWindow("Снять блокировку персонажа", $"Вы хотите снять блкировку персонажу [{pAccOrCharName}]?", false, false, pGMPanel);
-                    confirmation.Owner = SystemTray.magicstormLauncher;
+                    confirmation.Owner = SystemTray.nightholdLauncher;
                     if (confirmation.ShowDialog() == true)
                     {
                         pGMPanel.ShowActionMessage($"Снимаем бан персонажу [{pAccOrCharName}].");
@@ -99,7 +99,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                         (
                             await GameMasterClass.GetUnbanCharacterJson
                             (
-                                MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAccOrCharName, pRealmId.ToString())
+                                NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAccOrCharName, pRealmId.ToString())
                             ).ResponseMsg
                         );
 

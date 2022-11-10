@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.CharactersMarketControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs
+namespace Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs
 {
     /// <summary>
     /// Interaction logic for MarketRow2.xaml
@@ -67,17 +67,17 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs
             try
             {
                 var response = CharactersMarketClass.MarketCancelSaleResponse.FromJson(
-                    await CharactersMarketClass.GetMarketCancelSaleResponse(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pGuid.ToString(), pRealmID.ToString()));
+                    await CharactersMarketClass.GetMarketCancelSaleResponse(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pGuid.ToString(), pRealmID.ToString()));
 
-                SystemTray.magicstormLauncher.marketOwnPage.Visibility = Visibility.Collapsed;
-                AnimHandler.FadeIn(SystemTray.magicstormLauncher.marketPage, 300);
+                SystemTray.nightholdLauncher.marketOwnPage.Visibility = Visibility.Collapsed;
+                AnimHandler.FadeIn(SystemTray.nightholdLauncher.marketPage, 300);
 
                 if (!response.Response) // failed transaction, print error
                 {
                 }
                 else
                 {
-                    SystemTray.magicstormLauncher.userPanel.UpdateCharactersList();
+                    SystemTray.nightholdLauncher.userPanel.UpdateCharactersList();
                 }
             }
             catch

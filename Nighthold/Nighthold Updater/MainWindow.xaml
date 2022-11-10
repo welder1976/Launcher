@@ -1,14 +1,14 @@
-﻿<Window x:Class="MagicStorm_Updater.MainWindow"
+﻿<Window x:Class="Nighthold_Updater.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MagicStorm_Updater"
+        xmlns:local="clr-namespace:Nighthold_Updater"
         mc:Ignorable="d"
         Title="Средство обновления" Height="399.833" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded">
     <Grid Background="#FF232323">
         <Border Height="40" Background="#FF232323" VerticalAlignment="Top" MouseLeftButtonDown="Border_MouseLeftButtonDown">
-            <Label Content="Средство обновления" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Background="{x:Null}" Foreground="LightGray" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans"/>
+            <Label Content="Средство обновления" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Background="{x:Null}" Foreground="LightGray" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans"/>
         </Border>
         <MediaElement x:Name="wpmedia" LoadedBehavior="Play" Source="Assets/sylvanas01trim.mp4" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Volume="0.1" Height="340" Width="580">
             <MediaElement.Triggers>
@@ -29,27 +29,27 @@
         <!--RETRIEVING DOWNLOAD LIST PLACEHOLDER-->
         <StackPanel x:Name="SPPlaceholder" VerticalAlignment="Bottom" Height="35" MinWidth="50" Visibility="Visible">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,9,0,0">
-                <TextBlock x:Name="PlaceHorderText" Text="Получение списка обновлений, пожалуйста подождите ..." FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock x:Name="PlaceHorderText" Text="Получение списка обновлений, пожалуйста подождите ..." FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
             </StackPanel>
         </StackPanel>
         <!--PROGRESS STATUS-->
         <StackPanel x:Name="SPProgressStatus" VerticalAlignment="Bottom" Height="35" MinWidth="50" Visibility="Hidden">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,9,0,0">
-                <TextBlock Text="{Binding ElementName=pbStatus, Path=Value, StringFormat={}{0:0}%}" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFFF8A00" Background="{x:Null}" Margin="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock Text="(Downloading update" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="5,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock x:Name="FileFirstIndex" Text="1" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="White" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock Text="of" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock x:Name="FileSecondIndex" Text="1" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="White" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock Text=")" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock Text="-" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock x:Name="DownloadingFileName" Text="Unknown" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFF3FF00" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock Text="@" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
-                <TextBlock x:Name="DownloadSpeed" Text="0 MB/s" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFFF8A00" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Text="{Binding ElementName=pbStatus, Path=Value, StringFormat={}{0:0}%}" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFFF8A00" Background="{x:Null}" Margin="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Text="(Downloading update" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="5,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock x:Name="FileFirstIndex" Text="1" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="White" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Text="of" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock x:Name="FileSecondIndex" Text="1" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="White" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Text=")" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Text="-" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock x:Name="DownloadingFileName" Text="Unknown" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFF3FF00" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Text="@" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFE5D5C2" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock x:Name="DownloadSpeed" Text="0 MB/s" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="12" Foreground="#FFFF8A00" Background="{x:Null}" Margin="3,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
 
             </StackPanel>
         </StackPanel>
         <!--CANCEL BUTTON-->
-        <Button x:Name="BtnCancel" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="/MagicStorm Updater;component/Assets/Font/#Open Sans" FontSize="14" FontWeight="Bold" Padding="15,7,15,5" Margin="0,0,0,50" Background="#FF422D2D" Foreground="#FFD8D8D8" Cursor="Hand" Click="BtnCancel_Click" Style="{DynamicResource ButtonStyleCancel}">
+        <Button x:Name="BtnCancel" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="/Nighthold Updater;component/Assets/Font/#Open Sans" FontSize="14" FontWeight="Bold" Padding="15,7,15,5" Margin="0,0,0,50" Background="#FF422D2D" Foreground="#FFD8D8D8" Cursor="Hand" Click="BtnCancel_Click" Style="{DynamicResource ButtonStyleCancel}">
             <Button.Resources>
                 <Style x:Key="FocusVisual">
                     <Setter Property="Control.Template">

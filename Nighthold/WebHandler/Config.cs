@@ -2,7 +2,7 @@
 {
     public class Config // WEBHANDLER CONFIG
     {
-        private static readonly string LauncherAPIUrl = "https://launcher.magic-storm.ru"; // DO NOT ADD "/" AT THE END OF THE URL
+        private static readonly string LauncherAPIUrl = "https://launcher.nighthold.ru"; // DO NOT ADD "/" AT THE END OF THE URL
 
         /* -----------------------------------------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@
         public static readonly string 
             AppUrl = $"{LauncherAPIUrl}" + "/application/application.php";
 
-        public static readonly string 
+        public static readonly string
             GameFolderUrl = $"{LauncherAPIUrl}/game";
     }
 }

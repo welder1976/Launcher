@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.AccountStandingBarControls.Childs
+namespace Nighthold_Launcher.AccountStandingBarControls.Childs
 {
     /// <summary>
     /// Interaction logic for SinHistoryRow.xaml

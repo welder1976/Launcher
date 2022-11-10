@@ -17,12 +17,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="checkboxImage" Source="/MagicStorm Launcher;component/Assets/checkbox_a.png" Stretch="None"/>
+                        <Image x:Name="checkboxImage" Source="/Nighthold Launcher;component/Assets/checkbox_a.png" Stretch="None"/>
                         <ContentPresenter Margin="7, 0, 0, 0"/>
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="checkboxImage" Property="Source" Value="/MagicStorm Launcher;component/Assets/checkbox_h.png"/>
+                            <Setter TargetName="checkboxImage" Property="Source" Value="/Nighthold Launcher;component/Assets/checkbox_h.png"/>
                             <Setter Property="Foreground" Value="#FFf0f0f0"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">

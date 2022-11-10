@@ -1,9 +1,9 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Windows
+namespace Nighthold_Launcher.AdminPanelControls.Windows
 {
     /// <summary>
     /// Interaction logic for NotificationEditor.xaml

@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.VotePageControls.Childs
+namespace Nighthold_Launcher.FrontPages.VotePageControls.Childs
 {
     /// <summary>
     /// Interaction logic for VoteRow.xaml
@@ -106,8 +106,8 @@ namespace MagicStorm_Launcher.FrontPages.VotePageControls.Childs
 
             //        if (voteResponse.VoteRegistered)
             //        {
-            //            SystemTray.magicstormLauncher.votePage.LoadVotePage();
-            //            SystemTray.magicstormLauncher.userPanel.UpdateAccountBalance();
+            //            SystemTray.nightholdLauncher.votePage.LoadVotePage();
+            //            SystemTray.nightholdLauncher.userPanel.UpdateAccountBalance();
             //        }
             //    }
             //}

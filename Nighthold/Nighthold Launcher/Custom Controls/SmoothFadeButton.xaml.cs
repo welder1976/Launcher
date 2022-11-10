@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace MagicStorm_Launcher.Custom_Controls
+namespace Nighthold_Launcher.Custom_Controls
 {
     #region Inverted Bolean Converter for Visibility
     public class BooleanConverter<T> : IValueConverter

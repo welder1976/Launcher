@@ -1,17 +1,17 @@
-﻿<UserControl x:Class="MagicStorm_Launcher.OtherControls.UpdateNotification"
+﻿<UserControl x:Class="Nighthold_Launcher.OtherControls.UpdateNotification"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MagicStorm_Launcher.OtherControls"
+             xmlns:local="clr-namespace:Nighthold_Launcher.OtherControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="#F71A1C23" Foreground="White">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image Source="/MagicStorm Launcher;component/Assets/cogs_image.png" Width="100" Margin="0,0,0,10"/>
-            <Label Content="Доступна новая версия лаунчера!" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" FontSize="14" Background="{x:Null}" Foreground="White" Margin="0,0,0,10"/>
+            <Image Source="/Nighthold Launcher;component/Assets/cogs_image.png" Width="100" Margin="0,0,0,10"/>
+            <Label Content="Доступна новая версия лаунчера!" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" FontSize="14" Background="{x:Null}" Foreground="White" Margin="0,0,0,10"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button x:Name="BtnUpdate" Content="ОБНОВИТЬ" Background="#FFFF8B00" Foreground="#FF5D4300" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" Padding="0,5,0,3" Width="80" FontWeight="SemiBold" Cursor="Hand" Style="{DynamicResource ButtonStyleUpdate}" Click="BtnUpdate_Click" Margin="0,0,10,0" BorderBrush="{x:Null}">
+                <Button x:Name="BtnUpdate" Content="ОБНОВИТЬ" Background="#FFFF8B00" Foreground="#FF5D4300" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" Padding="0,5,0,3" Width="80" FontWeight="SemiBold" Cursor="Hand" Style="{DynamicResource ButtonStyleUpdate}" Click="BtnUpdate_Click" Margin="0,0,10,0" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style x:Key="ButtonStyleUpdate" TargetType="{x:Type Button}">
                             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
@@ -53,7 +53,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="BtnCancel" Content="ЗАКРЫТЬ" Background="Red" Foreground="#FF610000" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" Padding="0,5,0,3" Width="80" FontWeight="SemiBold" Cursor="Hand" Style="{DynamicResource ButtonStyleUpdate}" Click="BtnCancel_Click" BorderBrush="{x:Null}">
+                <Button x:Name="BtnCancel" Content="ЗАКРЫТЬ" Background="Red" Foreground="#FF610000" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" Padding="0,5,0,3" Width="80" FontWeight="SemiBold" Cursor="Hand" Style="{DynamicResource ButtonStyleUpdate}" Click="BtnCancel_Click" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style x:Key="ButtonStyleUpdate" TargetType="{x:Type Button}">
                             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>

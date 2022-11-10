@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MagicStorm_Launcher.Properties {
+namespace Nighthold_Launcher.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,7 +25,7 @@ namespace MagicStorm_Launcher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://launcher.magic-storm.ru/Config.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://launcher.nighthold.ru/Config.xml")]
         public string XMLDocumentUrl {
             get {
                 return ((string)(this["XMLDocumentUrl"]));
@@ -34,7 +34,7 @@ namespace MagicStorm_Launcher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://nighthold.pro/dashboard/payment/add")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://nighthold.ru/dashboard/payment/add")]
         public string BuyDPUrl {
             get {
                 return ((string)(this["BuyDPUrl"]));
@@ -46,7 +46,7 @@ namespace MagicStorm_Launcher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Magic-Storm")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Nighthold")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));

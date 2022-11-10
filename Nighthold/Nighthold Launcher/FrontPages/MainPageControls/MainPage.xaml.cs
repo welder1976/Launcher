@@ -1,6 +1,6 @@
-﻿using MagicStorm_Launcher.FrontPages.MainPageControls.Childs;
-using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows;
+﻿using Nighthold_Launcher.FrontPages.MainPageControls.Childs;
+using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Xml;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls
+namespace Nighthold_Launcher.FrontPages.MainPageControls
 {
     /// <summary>
     /// Interaction logic for MainPage.xaml
@@ -55,34 +55,34 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls
             switch (_expansionID)
             {
                 case 1: // vanilla
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_classic.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_classic.png", UriKind.Relative);
                     break;
                 case 2: // tbc
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_tbc.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_tbc.png", UriKind.Relative);
                     break;
                 case 3: // wotlk
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_wotlk.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_wotlk.png", UriKind.Relative);
                     break;
                 case 4: // cata
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_cata.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_cata.png", UriKind.Relative);
                     break;
                 case 5: // mop
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_mop.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_mop.png", UriKind.Relative);
                     break;
                 case 6: // wod
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_wod.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_wod.png", UriKind.Relative);
                     break;
                 case 7: // legion
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_legion.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_legion.png", UriKind.Relative);
                     break;
                 case 8: // bfa
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_bfa.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_bfa.png", UriKind.Relative);
                     break;
                 case 9: // shadowlands
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_shadowlands.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_shadowlands.png", UriKind.Relative);
                     break;
                 default:
-                    ToolHandler.SetImageSource(ExpansionBackground, "/MagicStorm Launcher;component/Assets/Expansion Backgrounds/expansion_bg_classic.png", UriKind.Relative);
+                    ToolHandler.SetImageSource(ExpansionBackground, "/Nighthold Launcher;component/Assets/Expansion Backgrounds/expansion_bg_classic.png", UriKind.Relative);
                     break;
             }
         }
@@ -128,33 +128,33 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SettingsWindow settings = new SettingsWindow();
-            settings.Owner = SystemTray.magicstormLauncher;
+            settings.Owner = SystemTray.nightholdLauncher;
             settings.ShowDialog();
         }
 
         private void BtnShop_Click(object sender, RoutedEventArgs e)
         {
-            //SystemTray.magicstormLauncher.shopPage.LoadShopPage();
+            //SystemTray.nightholdLauncher.shopPage.LoadShopPage();
         }
 
         private void BtnVote_Click(object sender, RoutedEventArgs e)
         {
-            //SystemTray.magicstormLauncher.votePage.LoadVotePage();
+            //SystemTray.nightholdLauncher.votePage.LoadVotePage();
         }
 
         private void BtnTopPvP_Click(object sender, RoutedEventArgs e)
         {
-            //SystemTray.magicstormLauncher.pvpPage.LoadPvPPage();
+            //SystemTray.nightholdLauncher.pvpPage.LoadPvPPage();
         }
 
         private void BtnOnlinePlayers_Click(object sender, RoutedEventArgs e)
         {
-            //SystemTray.magicstormLauncher.onlinePage.LoadPvPPage();
+            //SystemTray.nightholdLauncher.onlinePage.LoadPvPPage();
         }
 
         private void BtnCharactersMarket_Click(object sender, RoutedEventArgs e)
         {
-            //SystemTray.magicstormLauncher.marketPage.LoadMarketPage();
+            //SystemTray.nightholdLauncher.marketPage.LoadMarketPage();
         }
     }
 }

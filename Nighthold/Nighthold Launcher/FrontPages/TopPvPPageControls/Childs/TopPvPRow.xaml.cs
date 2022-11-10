@@ -1,8 +1,8 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.FrontPages.TopPvPPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.TopPvPPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for TopPvPRow.xaml

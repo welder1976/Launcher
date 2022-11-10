@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.NotificationsBarControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.NotificationsBarControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 using WebHandler;
 
-namespace MagicStorm_Launcher.NotificationsBarControls
+namespace Nighthold_Launcher.NotificationsBarControls
 {
     /// <summary>
     /// Interaction logic for NotificationsBar.xaml
@@ -41,7 +41,7 @@ namespace MagicStorm_Launcher.NotificationsBarControls
         private void BtnNotifications_Click(object sender, RoutedEventArgs e)
         {
             NotificationsWindow notificationsWindow = new NotificationsWindow();
-            notificationsWindow.Owner = SystemTray.magicstormLauncher;
+            notificationsWindow.Owner = SystemTray.nightholdLauncher;
             notificationsWindow.ShowDialog();
         }
 
@@ -65,7 +65,7 @@ namespace MagicStorm_Launcher.NotificationsBarControls
             try
             {
                 // get notifications collection from web api
-                var notificationsCollection = NotificationsClass.NotificationsList.FromJson(await NotificationsClass.GetNotificationsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var notificationsCollection = NotificationsClass.NotificationsList.FromJson(await NotificationsClass.GetNotificationsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 
                 // clear list
                 //NotificationPopups.Clear();

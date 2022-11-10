@@ -1,11 +1,11 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Windows
+namespace Nighthold_Launcher.AdminPanelControls.Windows
 {
     /// <summary>
     /// Interaction logic for ArticleEditor.xaml

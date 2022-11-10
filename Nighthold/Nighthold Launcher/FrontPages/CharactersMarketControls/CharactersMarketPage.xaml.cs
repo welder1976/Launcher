@@ -1,6 +1,6 @@
-﻿using MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs;
-using MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs;
+using Nighthold_Launcher.FrontPages.CharactersMarketControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
+namespace Nighthold_Launcher.FrontPages.CharactersMarketControls
 {
     /// <summary>
     /// Interaction logic for CharactersMarketPage.xaml
@@ -25,18 +25,18 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
         {
             SPMarketRows.Children.Clear();
             Visibility = Visibility.Hidden;
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.mainPage, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.mainPage, 300);
         }
 
         public async void LoadMarketPage()
         {
-            SystemTray.magicstormLauncher.mainPage.Visibility = Visibility.Hidden;
+            SystemTray.nightholdLauncher.mainPage.Visibility = Visibility.Hidden;
             AnimHandler.FadeIn(this, 300);
 
             try
             {
                 // Retrieve realms list first
-                var realms = GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var realms = GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 ComboBox1_ab.Items.Clear();
 
@@ -55,7 +55,7 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
                     ComboBox1_ab.IsEnabled = true;
                 }
 
-                var marketList = CharactersMarketClass.CharactersMarketList.FromJson(await CharactersMarketClass.GetCharactersMarketListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var marketList = CharactersMarketClass.CharactersMarketList.FromJson(await CharactersMarketClass.GetCharactersMarketListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 SPMarketRows.Children.Clear();
 
@@ -143,11 +143,6 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
 
         private void SimulateRealmSelection()
         {
-            if (SPMarketRows == null)
-            {
-                return;
-            }
-
             try
             {
                 foreach (MarketRow marketRow in SPMarketRows.Children.OfType<MarketRow>())
@@ -172,7 +167,7 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
         private void SellCharacterBtn_Click(object sender, RoutedEventArgs e)
         {
             SellPopup sellPopup = new SellPopup();
-            sellPopup.Owner = SystemTray.magicstormLauncher;
+            sellPopup.Owner = SystemTray.nightholdLauncher;
             sellPopup.ShowDialog();
         }
 
@@ -180,8 +175,8 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
         {
             SPMarketRows.Children.Clear();
             Visibility = Visibility.Hidden;
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.mainPage, 300);
-            SystemTray.magicstormLauncher.marketOwnPage.LoadMarketOwnPage();
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.mainPage, 300);
+            SystemTray.nightholdLauncher.marketOwnPage.LoadMarketOwnPage();
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.Windows;
 using System.Windows.Input;
 
-namespace MagicStorm_Launcher.OtherWindows
+namespace Nighthold_Launcher.OtherWindows
 {
     /// <summary>
     /// Interaction logic for SettingsWindow.xaml
@@ -36,12 +36,12 @@ namespace MagicStorm_Launcher.OtherWindows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
     }
 }

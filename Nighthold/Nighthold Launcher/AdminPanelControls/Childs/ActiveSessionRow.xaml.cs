@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Childs
+namespace Nighthold_Launcher.AdminPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for ActiveSessionRow.xaml
@@ -47,7 +47,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Childs
                 }
                 else
                 {
-                    string pathToRelativeRes = pAvatarUrl.Replace("/MagicStorm Launcher;component/", "");
+                    string pathToRelativeRes = pAvatarUrl.Replace("/Nighthold Launcher;component/", "");
                     pathToRelativeRes = pathToRelativeRes.Replace(" ", "%20");
 
                     if (ToolHandler.RelativeResourceExists(pathToRelativeRes))

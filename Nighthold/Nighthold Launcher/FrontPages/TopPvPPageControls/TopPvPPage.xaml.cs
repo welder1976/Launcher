@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.FrontPages.TopPvPPageControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.TopPvPPageControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.TopPvPPageControls
+namespace Nighthold_Launcher.FrontPages.TopPvPPageControls
 {
     /// <summary>
     /// Interaction logic for TopPvPPage.xaml
@@ -23,12 +23,12 @@ namespace MagicStorm_Launcher.FrontPages.TopPvPPageControls
         private void BtnReturnHome_Click(object sender, RoutedEventArgs e)
         {
             Visibility = Visibility.Hidden;
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.mainPage, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.mainPage, 300);
         }
 
         public async void LoadPvPPage()
         {
-            SystemTray.magicstormLauncher.mainPage.Visibility = Visibility.Hidden;
+            SystemTray.nightholdLauncher.mainPage.Visibility = Visibility.Hidden;
             AnimHandler.FadeIn(this, 300);
 
             SPRows.Children.Clear();
@@ -37,7 +37,7 @@ namespace MagicStorm_Launcher.FrontPages.TopPvPPageControls
             try
             {
                 // realms
-                var realmsCollection = GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var realmsCollection = GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 CBRealms.Items.Clear();
                 CBRealms.Items.Add(new ComboBoxItem()
                 {

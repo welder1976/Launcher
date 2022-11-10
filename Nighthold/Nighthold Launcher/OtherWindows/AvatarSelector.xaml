@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MagicStorm_Launcher.OtherWindows"
-        xmlns:Childs="clr-namespace:MagicStorm_Launcher.OtherWindows.Childs" xmlns:Spinners="clr-namespace:MagicStorm_Launcher.Spinners" x:Class="MagicStorm_Launcher.OtherWindows.AvatarSelector"
+        xmlns:local="clr-namespace:Nighthold_Launcher.OtherWindows"
+        xmlns:Childs="clr-namespace:Nighthold_Launcher.OtherWindows.Childs" xmlns:Spinners="clr-namespace:Nighthold_Launcher.Spinners" x:Class="Nighthold_Launcher.OtherWindows.AvatarSelector"
         mc:Ignorable="d"
-        Title="Avatar Selector" Height="450" Width="600" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" FontSize="14" Background="#FF464646" Foreground="#FFCDCDCD" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="Avatar Selector" Height="450" Width="600" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" FontSize="14" Background="#FF464646" Foreground="#FFCDCDCD" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid Background="#FF1A1C23">
         <Border Height="50" VerticalAlignment="Top" Background="#FF15171D" BorderThickness="0">
             <Label Content="Список доступных аватарок" Background="{x:Null}" Foreground="#FFAEAEAE" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold"/>
@@ -14,8 +14,8 @@
 
 
         <Grid Margin="0,15" VerticalAlignment="Bottom">
-            <Button x:Name="BtnYes" Content="ОК" Width="104" Height="34" BorderBrush="{x:Null}" Foreground="White" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Style="{DynamicResource CWButtonYes}" Click="BtnYes_Click" HorizontalAlignment="Center" Margin="0,0,125,0"/>
-            <Button x:Name="BtnNo" IsCancel="True" Content="ОТМЕНА" Width="104" Height="34" BorderBrush="{x:Null}" Foreground="White" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Style="{DynamicResource CWButtonNo}" HorizontalAlignment="Center" Margin="125,0,0,0"/>
+            <Button x:Name="BtnYes" Content="ОК" Width="104" Height="34" BorderBrush="{x:Null}" Foreground="White" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Style="{DynamicResource CWButtonYes}" Click="BtnYes_Click" HorizontalAlignment="Center" Margin="0,0,125,0"/>
+            <Button x:Name="BtnNo" IsCancel="True" Content="ОТМЕНА" Width="104" Height="34" BorderBrush="{x:Null}" Foreground="White" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Style="{DynamicResource CWButtonNo}" HorizontalAlignment="Center" Margin="125,0,0,0"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="351" Margin="0,50,0,0" VerticalAlignment="Top" Width="600">
             <ScrollViewer Style="{DynamicResource ScrollViewerOne}" Margin="10" Width="580" HorizontalAlignment="Center">

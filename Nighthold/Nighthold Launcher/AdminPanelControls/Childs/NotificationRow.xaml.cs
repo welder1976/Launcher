@@ -1,6 +1,6 @@
-﻿using MagicStorm_Launcher.AdminPanelControls.Pages;
-using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows;
+﻿using Nighthold_Launcher.AdminPanelControls.Pages;
+using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Childs
+namespace Nighthold_Launcher.AdminPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for NotificationRow.xaml
@@ -50,13 +50,13 @@ namespace MagicStorm_Launcher.AdminPanelControls.Childs
             try
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Delete notification", $"Sure you want to delete this notification?\r\n<{pSubject}>", false, false, null, pAdminPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pAdminPanel.ShowActionMessage($"Deleting notification \"{pSubject}\"");
 
-                    var json = NotificationsClass.NotificationDelete.FromJson(await NotificationsClass.GetNotificationDeleteResponseJson(MagicStormLauncher.LoginUsername,
-                        MagicStormLauncher.LoginPassword, pAdminPanel.SecKey, pID.ToString()));
+                    var json = NotificationsClass.NotificationDelete.FromJson(await NotificationsClass.GetNotificationDeleteResponseJson(NightholdLauncher.LoginUsername,
+                        NightholdLauncher.LoginPassword, pAdminPanel.SecKey, pID.ToString()));
 
                     pAdminPanel.ShowActionMessage(json.ResponseMsg);
 

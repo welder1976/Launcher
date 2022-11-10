@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class ClientHandler
     {
@@ -229,37 +229,40 @@ namespace MagicStorm_Launcher.Nighthold
 
         private static void SetRealmlistPerLocale(int expansionID)
         {
-            try
+            if (expansionID != 3)
             {
-                string[] locales = new string[] { "enUS", "esMX", "ptBR", "deDE", "enGB", "esES", "frFR", "itIT", "ruRU", "koKR", "zhTW", "zhCN" };
-
-                foreach (var d in Directory.GetDirectories($@"{GetExpansionPath(expansionID)}\data"))
+                try
                 {
-                    var dir = new DirectoryInfo(d);
-                    var dirName = dir.Name;
+                    string[] locales = new string[] { "enUS", "esMX", "ptBR", "deDE", "enGB", "esES", "frFR", "itIT", "ruRU", "koKR", "zhTW", "zhCN" };
 
-                    if (locales.Contains(dirName))
+                    foreach (var d in Directory.GetDirectories($@"{GetExpansionPath(expansionID)}\data"))
                     {
-                        string configWTFPath = $@"{ GetExpansionPath(expansionID) }\data\{ dirName }\Realmlist.wtf";
+                        var dir = new DirectoryInfo(d);
+                        var dirName = dir.Name;
 
-                        if (File.Exists(configWTFPath))
+                        if (locales.Contains(dirName))
                         {
-                            var oldLines = File.ReadAllLines(configWTFPath);
+                            string configWTFPath = $@"{ GetExpansionPath(expansionID) }\data\{ dirName }\Realmlist.wtf";
 
-                            // reads all lines except the lines that contains SET portal
-                            var newLines = oldLines.Where(line => !line.ToLower().Contains("set realmlist"));
+                            if (File.Exists(configWTFPath))
+                            {
+                                var oldLines = File.ReadAllLines(configWTFPath);
 
-                            File.WriteAllLines(configWTFPath, newLines);
+                                // reads all lines except the lines that contains SET portal
+                                var newLines = oldLines.Where(line => !line.ToLower().Contains("set realmlist"));
 
-                            using (var outputFile = new StreamWriter(configWTFPath, true))
-                                outputFile.WriteLine($"SET realmList \"{ GetExpansionRealmlist(expansionID) }\"");
+                                File.WriteAllLines(configWTFPath, newLines);
+
+                                using (var outputFile = new StreamWriter(configWTFPath, true))
+                                    outputFile.WriteLine($"SET realmList \"{ GetExpansionRealmlist(expansionID) }\"");
+                            }
                         }
                     }
                 }
-            }
-            catch
-            {
+                catch
+                {
 
+                }
             }
         }
 
@@ -293,7 +296,7 @@ namespace MagicStorm_Launcher.Nighthold
 
         public static void StartWoWClient(int _expansionID)
         {
-            string WowExePath = $@"{ GetExpansionPath(_expansionID) }\WOWMagic.exe";
+            string WowExePath = $@"{ GetExpansionPath(_expansionID) }\Nighthold.exe";
             if (File.Exists(WowExePath))
             {
                 try

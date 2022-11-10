@@ -1,10 +1,10 @@
 ﻿using Microsoft.Win32;
-using MagicStorm_Login;
+using Nighthold_Login;
 using System;
 using System.Windows;
 using WebHandler;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class AppHandler
     {
@@ -26,7 +26,7 @@ namespace MagicStorm_Launcher.Nighthold
 
         public static void AddApplicationToStartup()
         {
-            var LoginAssembly = typeof(MagicStormLogin).Assembly;
+            var LoginAssembly = typeof(NightholdLogin).Assembly;
 
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
             {
@@ -36,7 +36,7 @@ namespace MagicStorm_Launcher.Nighthold
 
         public static void RemoveApplicationFromStartup()
         {
-            var LoginAssembly = typeof(MagicStormLogin).Assembly;
+            var LoginAssembly = typeof(NightholdLogin).Assembly;
 
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
             {
@@ -50,7 +50,7 @@ namespace MagicStorm_Launcher.Nighthold
 
         public static async void PingMeAlive()
         {
-            await CiSessionsClass.PingMeAlive(MagicStormLauncher.LoginUsername);
+            await CiSessionsClass.PingMeAlive(NightholdLauncher.LoginUsername);
         }
     }
 }

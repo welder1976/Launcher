@@ -1,12 +1,12 @@
-﻿using MagicStorm_Launcher.FrontPages.VotePageControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.VotePageControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.VotePageControls
+namespace Nighthold_Launcher.FrontPages.VotePageControls
 {
     /// <summary>
     /// Interaction logic for VotePage.xaml
@@ -22,19 +22,19 @@ namespace MagicStorm_Launcher.FrontPages.VotePageControls
         {
             SPVoteRows.Children.Clear();
             Visibility = Visibility.Hidden;
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.mainPage, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.mainPage, 300);
         }
 
         public async void LoadVotePage()
         {
-            SystemTray.magicstormLauncher.mainPage.Visibility = Visibility.Hidden;
+            SystemTray.nightholdLauncher.mainPage.Visibility = Visibility.Hidden;
             AnimHandler.FadeIn(this, 300);
 
             SPVoteRows.Children.Clear();
 
             try
             {
-                var voteSitesCollection = AuthClass.VoteSitesList.FromJson(await AuthClass.GetVoteSitesListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var voteSitesCollection = AuthClass.VoteSitesList.FromJson(await AuthClass.GetVoteSitesListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 if (voteSitesCollection != null)
                 {

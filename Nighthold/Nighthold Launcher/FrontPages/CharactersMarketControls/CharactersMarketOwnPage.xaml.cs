@@ -1,13 +1,13 @@
-﻿using MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs;
-using MagicStorm_Launcher.FrontPages.CharactersMarketControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs;
+using Nighthold_Launcher.FrontPages.CharactersMarketControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
+namespace Nighthold_Launcher.FrontPages.CharactersMarketControls
 {
     /// <summary>
     /// Interaction logic for CharactersMarketOwnPage.xaml
@@ -23,17 +23,17 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
         {
             SPMarketRows.Children.Clear();
             Visibility = Visibility.Hidden;
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.marketPage, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.marketPage, 300);
         }
 
         public async void LoadMarketOwnPage()
         {
-            SystemTray.magicstormLauncher.mainPage.Visibility = Visibility.Hidden;
+            SystemTray.nightholdLauncher.mainPage.Visibility = Visibility.Hidden;
             AnimHandler.FadeIn(this, 300);
 
             try
             {
-                var marketList = CharactersMarketClass.CharactersMarketOwnList.FromJson(await CharactersMarketClass.GetCharactersMarketOwnListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var marketList = CharactersMarketClass.CharactersMarketOwnList.FromJson(await CharactersMarketClass.GetCharactersMarketOwnListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 SPMarketRows.Children.Clear();
 
@@ -58,7 +58,7 @@ namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls
         private void SellCharacterBtn_Click(object sender, RoutedEventArgs e)
         {
             SellPopup sellPopup = new SellPopup();
-            sellPopup.Owner = SystemTray.magicstormLauncher;
+            sellPopup.Owner = SystemTray.nightholdLauncher;
             sellPopup.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.UserPanelControls.Childs
+namespace Nighthold_Launcher.UserPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for CharRealmNameRow.xaml

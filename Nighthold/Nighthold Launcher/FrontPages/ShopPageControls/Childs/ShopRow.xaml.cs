@@ -1,10 +1,10 @@
-﻿using MagicStorm_Launcher.FrontPages.ShopPageControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.ShopPageControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.ShopPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for ShopRow.xaml
@@ -61,7 +61,7 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls.Childs
         private void BtnBuyNow_Click(object sender, RoutedEventArgs e)
         {
             BuyPopup buyPopup = new BuyPopup(pId, pTitle, pDescription, pImgUrl, pPriceDP, pPriceVP, pCategory, pRealmId);
-            buyPopup.Owner = SystemTray.magicstormLauncher;
+            buyPopup.Owner = SystemTray.nightholdLauncher;
             buyPopup.ShowDialog();
         }
     }

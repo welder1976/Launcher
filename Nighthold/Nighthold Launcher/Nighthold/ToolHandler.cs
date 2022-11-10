@@ -13,7 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class ToolHandler
     {
@@ -730,7 +730,7 @@ namespace MagicStorm_Launcher.Nighthold
                 case 9:
                     return "Чернокнижник";
                 case 10:
-                    return "Мистик";
+                    return "Monk";
                 case 11:
                     return "Друид";
                 case 12:

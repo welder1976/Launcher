@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MagicStorm_Launcher
+namespace Nighthold_Launcher
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -9,7 +9,7 @@ namespace MagicStorm_Launcher
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            MagicStormLauncher WindowParent = new MagicStormLauncher();
+            NightholdLauncher WindowParent = new NightholdLauncher();
             WindowParent.SetArguments(e.Args);
         }
     }

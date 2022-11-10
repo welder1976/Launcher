@@ -1,12 +1,12 @@
-﻿using MagicStorm_Launcher.GMPanelControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.GMPanelControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.GMPanelControls.Pages
+namespace Nighthold_Launcher.GMPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for MuteLogs.xaml
@@ -29,7 +29,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
             {
                 CBRealms.Items.Clear();
                 int realmsCount = 0;
-                foreach (var realm in GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword)))
+                foreach (var realm in GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword)))
                 {
                     CBRealms.Items.Add(new ComboBoxItem()
                     {
@@ -84,7 +84,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
                     AnimHandler.MoveUpAndFadeIn(label1);
 
                     var pInfoCollection = GameMasterClass.PlayerInfo.FromJson(await GameMasterClass.GetPlayerInfoJson(
-                        MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, SearchBox.Text, ((ComboBoxItem)CBRealms.SelectedItem).Tag.ToString()));
+                        NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, SearchBox.Text, ((ComboBoxItem)CBRealms.SelectedItem).Tag.ToString()));
 
                     SPPlayerInfo.Children.Clear();
 

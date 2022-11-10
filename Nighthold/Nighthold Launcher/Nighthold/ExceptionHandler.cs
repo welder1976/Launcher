@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Windows;
 using WebHandler;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class ExceptionHandler
     {
@@ -13,7 +13,7 @@ namespace MagicStorm_Launcher.Nighthold
                 "Сообщить об этой ошибке разработчикам?", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (mBoxResult == MessageBoxResult.Yes)
             {
-                await DiscordClass.SendNewIssueReport(MagicStormLauncher.LoginUsername,
+                await DiscordClass.SendNewIssueReport(NightholdLauncher.LoginUsername,
                     Assembly.GetExecutingAssembly().GetName().Version.ToString(),
                     $"\"{fileName}\" at line ({lineNumber})",
                     ex.Message);
@@ -26,7 +26,7 @@ namespace MagicStorm_Launcher.Nighthold
 
             if (mBoxResult == MessageBoxResult.Yes)
             {
-                await DiscordClass.SendNewIssueReport(MagicStormLauncher.LoginUsername, Assembly.GetExecutingAssembly().GetName().Version.ToString(), customError, "");
+                await DiscordClass.SendNewIssueReport(NightholdLauncher.LoginUsername, Assembly.GetExecutingAssembly().GetName().Version.ToString(), customError, "");
             }
         }
     }

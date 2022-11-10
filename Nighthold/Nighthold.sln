@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicStorm Login", "Nighthold Login\MagicStorm Login.csproj", "{47028A07-2188-4A3A-853F-B54C280CB4A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nighthold Login", "Nighthold Login\Nighthold Login.csproj", "{47028A07-2188-4A3A-853F-B54C280CB4A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicStorm Launcher", "Nighthold Launcher\MagicStorm Launcher.csproj", "{7A3F5DA7-8C1A-4C33-ABB0-620E14F91B1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nighthold Launcher", "Nighthold Launcher\Nighthold Launcher.csproj", "{7A3F5DA7-8C1A-4C33-ABB0-620E14F91B1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHandler", "WebHandler\WebHandler.csproj", "{3EFFBDB1-5544-4EE2-AFA5-37C28516DC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicStorm Updater", "Nighthold Updater\MagicStorm Updater.csproj", "{AA5E5F56-E419-4CE0-A113-AF281475CBAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nighthold Updater", "Nighthold Updater\Nighthold Updater.csproj", "{AA5E5F56-E419-4CE0-A113-AF281475CBAB}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Nighthold Launcher Setup", "Nighthold Launcher Setup\Nighthold Launcher Setup.vdproj", "{934688BE-5131-49CA-BD74-C0725FF01F52}"
 EndProject

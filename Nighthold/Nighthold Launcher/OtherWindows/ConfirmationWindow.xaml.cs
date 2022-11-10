@@ -1,9 +1,9 @@
-﻿using MagicStorm_Launcher.AdminPanelControls;
-using MagicStorm_Launcher.GMPanelControls;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.AdminPanelControls;
+using Nighthold_Launcher.GMPanelControls;
+using Nighthold_Launcher.Nighthold;
 using System.Windows;
 
-namespace MagicStorm_Launcher.OtherWindows
+namespace Nighthold_Launcher.OtherWindows
 {
     /// <summary>
     /// Interaction logic for ConfirmationWindow.xaml
@@ -41,7 +41,7 @@ namespace MagicStorm_Launcher.OtherWindows
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             if (LauncherOverlay)
-                AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+                AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
 
             if (!UseMessage)
                 SPMessage.Visibility = Visibility.Collapsed;
@@ -56,7 +56,7 @@ namespace MagicStorm_Launcher.OtherWindows
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (LauncherOverlay)
-                AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+                AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
 
             if (pGMPanel != null)
                 AnimHandler.FadeOut(pGMPanel.OverlayBlur, 300);

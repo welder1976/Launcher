@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.GMPanelControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.GMPanelControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.GMPanelControls.Pages
+namespace Nighthold_Launcher.GMPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for TicketsPage.xaml
@@ -26,7 +26,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
         {
             try
             {
-                var ticketsCollection = GameMasterClass.Tickets.FromJson(await GameMasterClass.GetTicketsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var ticketsCollection = GameMasterClass.Tickets.FromJson(await GameMasterClass.GetTicketsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
                 SPTickets.Children.Clear();
 
                 if (ticketsCollection != null)

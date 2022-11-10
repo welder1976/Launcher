@@ -1,11 +1,11 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.GMPanelControls.Pages
+namespace Nighthold_Launcher.GMPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for NewBanWindow.xaml
@@ -86,7 +86,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Pages
             {
                 CBRealms.Items.Clear();
                 int realmsCount = 0;
-                foreach (var realm in GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword)))
+                foreach (var realm in GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword)))
                 {
                     CBRealms.Items.Add(new ComboBoxItem()
                     {

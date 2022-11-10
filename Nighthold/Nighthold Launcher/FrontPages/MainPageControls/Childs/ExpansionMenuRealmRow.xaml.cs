@@ -1,9 +1,9 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
+namespace Nighthold_Launcher.FrontPages.MainPageControls.Childs
 {
     /// <summary>
     /// Interaction logic for ExpansionMenuRow.xaml
@@ -36,9 +36,9 @@ namespace MagicStorm_Launcher.FrontPages.MainPageControls.Childs
         private async void SetRealmstatusIcon()
         {
             if (await Task.Run(() => RealmHandler.GetRealmStatus(Realmlist, Port, 2500)))
-                ToolHandler.SetImageSource(RealmStatusIcon, "/MagicStorm Launcher;component/Assets/Menu Icons/realm_up.png", UriKind.Relative);
+                ToolHandler.SetImageSource(RealmStatusIcon, "/Nighthold Launcher;component/Assets/Menu Icons/realm_up.png", UriKind.Relative);
             else
-                ToolHandler.SetImageSource(RealmStatusIcon, "/MagicStorm Launcher;component/Assets/Menu Icons/realm_down.png", UriKind.Relative);
+                ToolHandler.SetImageSource(RealmStatusIcon, "/Nighthold Launcher;component/Assets/Menu Icons/realm_down.png", UriKind.Relative);
         }
     }
 }

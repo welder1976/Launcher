@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NightholdLauncher>
+    <!--  
+        EXPANSION IDS:
+        1 = Classic
+        2 = Burning Crusade
+        3 = Wrath of the Lich King
+        4 = Cataclysm
+        5 = Mists of Pandaria
+        6 = Warlords of Draenor
+        7 = Legion
+        8 = Battle for Azeroth
+        9 = Shadowlands
+    
+        MENU ICON IDS:
+        1 = Chat Bubble
+        2 = Exclamation Star
+        3 = Shopping Cart
+        4 = Download Icon
+        5 = Website Icon
+        
+        TO PUSH NEW CLIENT UPDATES:
+            increase/decrease update_version value
+    -->
+    
+    <Links>
+        <WebsiteLink>https://nighthold.pro</WebsiteLink>
+        <DiscordLink>https://discord.gg/BXGv7DFHXH</DiscordLink>
+    </Links>
+    
+    <Expansions>
+    
+        <Expansion id="3" update_version="2">
+            <Maintenance enable="false">
+                Dummy maintenance message
+            </Maintenance>
+            <Menu>
+                <Item icon="5" url="https://nighthold.pro/ru-ru/news">Последние новости</Item>
+                <!-- <Item icon="1" url="http:/localhost/faq">FAQ</Item> -->
+                <Item icon="2" url="https://community.nighthold.pro/forums/wrath-of-the-lich-king.26/">Баг-Трекер</Item>
+                <!-- <Item icon="4" url="http:/localhost/addons">Addons</Item> -->
+            </Menu>
+            <Realms realmlist="185.71.65.236">
+                <Realm port="8085">Stormrage X7</Realm>
+            </Realms>
+        </Expansion>
+
+    </Expansions>
+    
+    <!--  Remote configuration file for Nighthold Launcher by CyberMist2  -->
+</NightholdLauncher>

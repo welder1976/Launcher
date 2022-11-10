@@ -1,11 +1,11 @@
-﻿using MagicStorm_Launcher.GMPanelControls.Pages;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.GMPanelControls.Pages;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.GMPanelControls
+namespace Nighthold_Launcher.GMPanelControls
 {
     /// <summary>
     /// Interaction logic for GMPanel.xaml
@@ -19,17 +19,17 @@ namespace MagicStorm_Launcher.GMPanelControls
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
             AnimHandler.FadeIn(this, 1000);
 
             PanelGrid.Children.Clear();
             PanelGrid.Children.Add(new TicketsManager(this));
-            ShowActionMessage($"Добро пожаловать {MagicStormLauncher.LoginUsername}, вы являетесь частью коллектива. Что ты задумал?");
+            ShowActionMessage($"Добро пожаловать {NightholdLauncher.LoginUsername}, вы являетесь частью коллектива. Что ты задумал?");
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 
-namespace MagicStorm_Launcher.Nighthold
+namespace Nighthold_Launcher.Nighthold
 {
     class XMLHandler
     {
@@ -24,16 +24,9 @@ namespace MagicStorm_Launcher.Nighthold
         {
             var LV = WebHandler.FilesListClass.LVersionResponse.FromJson(await WebHandler.FilesListClass.GetLauncherVersionResponseJson());
 
-            if (LV == null)
+            if (LV.Version != System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
             {
-                return;
-            }
-
-            var siteLauncherVersion = Version.Parse(LV.Version);
-
-            if (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version < siteLauncherVersion)
-            {
-                AnimHandler.FadeIn(SystemTray.magicstormLauncher.NightholdUpdate, 300);
+                AnimHandler.FadeIn(SystemTray.nightholdLauncher.NightholdUpdate, 300);
             }
 
             DispatcherTimer timer = new DispatcherTimer();

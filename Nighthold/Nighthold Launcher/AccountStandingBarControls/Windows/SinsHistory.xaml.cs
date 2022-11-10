@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.AccountStandingBarControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.AccountStandingBarControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AccountStandingBarControls.Windows
+namespace Nighthold_Launcher.AccountStandingBarControls.Windows
 {
     /// <summary>
     /// Interaction logic for SinsHistory.xaml
@@ -26,7 +26,7 @@ namespace MagicStorm_Launcher.AccountStandingBarControls.Windows
             try
             {
                 var sinsHistoryCollection = SinsHistoryClass.SinsHistoryList.FromJson(
-                    await SinsHistoryClass.GetSinsHistoryListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                    await SinsHistoryClass.GetSinsHistoryListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 SPSinsHistory.Children.Clear();
 
@@ -78,12 +78,12 @@ namespace MagicStorm_Launcher.AccountStandingBarControls.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            AnimHandler.FadeOut(SystemTray.magicstormLauncher.OverlayBlur, 300);
+            AnimHandler.FadeOut(SystemTray.nightholdLauncher.OverlayBlur, 300);
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="MagicStorm_Launcher.AdminPanelControls.Childs.NewsExpansionRow"
+﻿<UserControl x:Class="Nighthold_Launcher.AdminPanelControls.Childs.NewsExpansionRow"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MagicStorm_Launcher.AdminPanelControls.Childs"
+             xmlns:local="clr-namespace:Nighthold_Launcher.AdminPanelControls.Childs"
              mc:Ignorable="d" 
              Height="50" Width="200" Margin="0,0,0,10">
-    <Button x:Name="ExpansionName" Content="Unknown" Cursor="Hand" FontFamily="/MagicStorm Launcher;component/Assets/Font/#Open Sans" FontSize="14" Background="#26000000" BorderBrush="{x:Null}" Foreground="#FFCFCFCF" Style="{DynamicResource ButtonStyleExpansion}" Loaded="ExpansionName_Loaded" Click="ExpansionName_Click">
+    <Button x:Name="ExpansionName" Content="Unknown" Cursor="Hand" FontFamily="/Nighthold Launcher;component/Assets/Font/#Open Sans" FontSize="14" Background="#26000000" BorderBrush="{x:Null}" Foreground="#FFCFCFCF" Style="{DynamicResource ButtonStyleExpansion}" Loaded="ExpansionName_Loaded" Click="ExpansionName_Click">
         <Button.Resources>
             <Style x:Key="ButtonStyleExpansion" TargetType="{x:Type Button}">
                 <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>

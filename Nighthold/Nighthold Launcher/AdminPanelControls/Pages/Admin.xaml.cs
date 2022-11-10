@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows;
+﻿using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Pages
+namespace Nighthold_Launcher.AdminPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for Admin.xaml
@@ -40,7 +40,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
                 });
 
                 // realms
-                foreach (var realm in GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword)))
+                foreach (var realm in GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword)))
                 {
                     // "set gm level" realms combobox
                     CBGMLevelRealm.Items.Add(new ComboBoxItem()
@@ -59,7 +59,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
                 }
 
                 // gm ranks
-                foreach (var gmRank in GameMasterClass.GMRanksList.FromJson(await GameMasterClass.GetGMRanksListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword)))
+                foreach (var gmRank in GameMasterClass.GMRanksList.FromJson(await GameMasterClass.GetGMRanksListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword)))
                 {
                     CBGMLevelRank.Items.Add(new ComboBoxItem()
                     {
@@ -103,7 +103,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
 
                 ConfirmationWindow confirmation = new ConfirmationWindow("Set Account GM Level",
                     $"Are you sure about setting account [{GMLevelAccountName.Text}] to GM Level [{cbSelectedRankId}] on realm [{cbSelectedRealm}]", false, false, null, pAdminPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pAdminPanel.ShowActionMessage($"Setting account [{GMLevelAccountName.Text}] to GM level to {cbSelectedRankId} on realm [{cbSelectedRealm}].");
@@ -112,7 +112,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
                     (
                         await GameMasterClass.GetSetGMLevelJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAdminPanel.SecKey, GMLevelAccountName.Text, cbSelectedRankId, cbSelectedRealmId, "1")
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAdminPanel.SecKey, GMLevelAccountName.Text, cbSelectedRankId, cbSelectedRealmId, "1")
                         ).ResponseMsg
                     );
                 }
@@ -129,7 +129,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Change Account Password",
                     $"Are you sure about changing account [{PasswordChangeAccountName.Text}]'s password?", false, false, null, pAdminPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pAdminPanel.ShowActionMessage($"Changing password for account [{PasswordChangeAccountName.Text}].");
@@ -138,7 +138,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
                     (
                         await GameMasterClass.GetSetAccountPasswordJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAdminPanel.SecKey, PasswordChangeAccountName.Text, PasswordChangePassword.Password, "1")
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAdminPanel.SecKey, PasswordChangeAccountName.Text, PasswordChangePassword.Password, "1")
                         ).ResponseMsg
                     );
                 }
@@ -158,7 +158,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
 
                 ConfirmationWindow confirmation = new ConfirmationWindow("Send a console command",
                     $"Are you sure about sending command [{RawCommand.Text}] to the console on realm [{cbSelectedRealm}]?", false, false, null, pAdminPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pAdminPanel.ShowActionMessage($"Sending raw command to console on realm [{cbSelectedRealm}].");
@@ -167,7 +167,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
                     (
                         await GameMasterClass.GetSendRawCommandJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAdminPanel.SecKey, RawCommand.Text, cbSelectedRealmId)
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAdminPanel.SecKey, RawCommand.Text, cbSelectedRealmId)
                         ).ResponseMsg
                     );
                 }

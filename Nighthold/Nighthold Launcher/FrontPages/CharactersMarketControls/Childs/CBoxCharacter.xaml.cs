@@ -1,4 +1,4 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MagicStorm_Launcher.FrontPages.CharactersMarketControls.Childs
+namespace Nighthold_Launcher.FrontPages.CharactersMarketControls.Childs
 {
     /// <summary>
     /// Interaction logic for CBoxCharacter.xaml

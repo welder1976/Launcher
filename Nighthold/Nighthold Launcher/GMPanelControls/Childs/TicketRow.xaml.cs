@@ -1,12 +1,12 @@
-﻿using MagicStorm_Launcher.Nighthold;
-using MagicStorm_Launcher.OtherWindows;
+﻿using Nighthold_Launcher.Nighthold;
+using Nighthold_Launcher.OtherWindows;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.GMPanelControls.Childs
+namespace Nighthold_Launcher.GMPanelControls.Childs
 {
     /// <summary>
     /// Interaction logic for TicketRow.xaml
@@ -82,7 +82,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             try
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Закрыть тикет", $"Вы уверены что хотите закрыть тикет игрока {pTicketName}?", false, false, pGMPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pGMPanel.ShowActionMessage($"Закрываем тикет игрока [{pTicketName}], ID {pTicketId}.");
@@ -91,7 +91,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                     (
                         await GameMasterClass.GetTicketCloseJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
                         ).ResponseMsg
                     );
 
@@ -109,7 +109,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             try
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Удалить тикет", $"Вы уверены что хотите удалить тикет игрока {pTicketName}?", false, false, pGMPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pGMPanel.ShowActionMessage($"Закрываем и удаляем тикет игрока [{pTicketName}], ID {pTicketId}.");
@@ -118,7 +118,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                     (
                         await GameMasterClass.GetTicketCloseJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
                         ).ResponseMsg
                     );
 
@@ -126,7 +126,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                     (
                         await GameMasterClass.GetTicketDeleteJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
                         ).ResponseMsg
                     );
 
@@ -145,7 +145,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Assign Ticket", $"Do you really want to assign {pTicketName}'s ticket? " +
                 $"Type the GM's character name you would like to be assigned to.", true, false, pGMPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pGMPanel.ShowActionMessage($"Assigning player [{pTicketName}]'s ticket with ID {pTicketId} to GM [{confirmation.TextInserted}].");
@@ -172,7 +172,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             /*try
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Unassign Ticket", $"Do you really want to unassign {pTicketName}'s ticket?", false, false, pGMPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pGMPanel.ShowActionMessage($"Unassigning player [{pTicketName}]'s ticket with ID {pTicketId}.");
@@ -200,7 +200,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
             {
                 ConfirmationWindow confirmation = new ConfirmationWindow("Ответить на тикет", $"Хотите ответить на тикет игрока {pTicketName}" +
                 $"?", true, false, pGMPanel);
-                confirmation.Owner = SystemTray.magicstormLauncher;
+                confirmation.Owner = SystemTray.nightholdLauncher;
                 if (confirmation.ShowDialog() == true)
                 {
                     pGMPanel.ShowActionMessage($"Отвечаем игроку [{pTicketName}], ID тикета: {pTicketId}.");
@@ -209,7 +209,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                     (
                         await GameMasterClass.GetTicketReplyJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, confirmation.TextInserted, pTicketId.ToString(), pTicketRealmId.ToString())
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, confirmation.TextInserted, pTicketId.ToString(), pTicketRealmId.ToString())
                         ).ResponseMsg
                     );
 
@@ -217,7 +217,7 @@ namespace MagicStorm_Launcher.GMPanelControls.Childs
                     (
                         await GameMasterClass.GetTicketCompleteJson
                         (
-                            MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
+                            NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pTicketId.ToString(), pTicketRealmId.ToString())
                         ).ResponseMsg
                     );
 

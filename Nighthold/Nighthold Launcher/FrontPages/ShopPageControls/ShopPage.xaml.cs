@@ -1,5 +1,5 @@
-﻿using MagicStorm_Launcher.FrontPages.ShopPageControls.Childs;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.FrontPages.ShopPageControls.Childs;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.FrontPages.ShopPageControls
+namespace Nighthold_Launcher.FrontPages.ShopPageControls
 {
     /// <summary>
     /// Interaction logic for ShopPage.xaml
@@ -24,18 +24,18 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls
         {
             SPShopRows.Children.Clear();
             Visibility = Visibility.Hidden;
-            AnimHandler.FadeIn(SystemTray.magicstormLauncher.mainPage, 300);
+            AnimHandler.FadeIn(SystemTray.nightholdLauncher.mainPage, 300);
         }
 
         public async void LoadShopPage()
         {
-            SystemTray.magicstormLauncher.mainPage.Visibility = Visibility.Hidden;
+            SystemTray.nightholdLauncher.mainPage.Visibility = Visibility.Hidden;
             AnimHandler.FadeIn(this, 300);
 
             try
             {
                 // Retrieve realms list first
-                var realms = GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var realms = GameMasterClass.RealmsList.FromJson(await GameMasterClass.GetRealmsListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 ComboBox1_ab.Items.Clear();
 
@@ -55,7 +55,7 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls
                 }
 
                 // Retrieve shop list based on realm id
-                var shopList = AuthClass.ShopList.FromJson(await AuthClass.GetShopListJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword));
+                var shopList = AuthClass.ShopList.FromJson(await AuthClass.GetShopListJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword));
 
                 SPShopRows.Children.Clear();
 
@@ -152,12 +152,7 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls
         {
             try
             {
-                int.TryParse(((ComboBoxItem)ComboBox1_ab.SelectedItem).Tag?.ToString(), out int _realmId);
-
-                if (SPShopRows == null)
-                {
-                    return;
-                }
+                int.TryParse(((ComboBoxItem)ComboBox1_ab.SelectedItem).Tag.ToString(), out int _realmId);
 
                 foreach (ShopRow shopRow in SPShopRows.Children.OfType<ShopRow>())
                     shopRow.Visibility = Visibility.Visible;
@@ -209,19 +204,16 @@ namespace MagicStorm_Launcher.FrontPages.ShopPageControls
         {
             try
             {
-                if (SPShopRows != null)
+                foreach (ShopRow shopRow in SPShopRows.Children.OfType<ShopRow>())
+                    shopRow.Visibility = Visibility.Collapsed;
+
+                foreach (ShopRow shopRow in SPShopRows.Children.OfType<ShopRow>())
                 {
-                    foreach (ShopRow shopRow in SPShopRows.Children.OfType<ShopRow>())
-                        shopRow.Visibility = Visibility.Collapsed;
+                    int.TryParse(((ComboBoxItem)ComboBox1_ab.SelectedItem).Tag.ToString(), out int _realmId);
 
-                    foreach (ShopRow shopRow in SPShopRows.Children.OfType<ShopRow>())
+                    if (shopRow.pRealmId == _realmId)
                     {
-                        int.TryParse(((ComboBoxItem)ComboBox1_ab.SelectedItem).Tag.ToString(), out int _realmId);
-
-                        if (shopRow.pRealmId == _realmId)
-                        {
-                            shopRow.Visibility = Visibility.Visible;
-                        }
+                        shopRow.Visibility = Visibility.Visible;
                     }
                 }
             }

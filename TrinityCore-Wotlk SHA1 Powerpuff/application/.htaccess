@@ -1,0 +1,10 @@
+Options -Indexes
+
+Order Deny,Allow
+Deny from all
+Allow from 127.0.0.1
+
+<FilesMatch "(application\.php)">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>

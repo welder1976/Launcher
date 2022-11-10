@@ -1,11 +1,11 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
 
-namespace MagicStorm_Launcher.NotificationsBarControls.Childs
+namespace Nighthold_Launcher.NotificationsBarControls.Childs
 {
     /// <summary>
     /// Interaction logic for NotificationRow.xaml
@@ -60,7 +60,7 @@ namespace MagicStorm_Launcher.NotificationsBarControls.Childs
         private async void BtnMarkAsRead_Click(object sender, RoutedEventArgs e)
         {
             Opacity = 0;
-            await NotificationsClass.MarkNotificationAsRead(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pID.ToString());
+            await NotificationsClass.MarkNotificationAsRead(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pID.ToString());
             SetVisualMarkAsRead(); // don't reload notifications after marking notification as read
             AnimHandler.MoveUpAndFadeIn(this);
         }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MagicStorm_Updater.Properties {
+namespace Nighthold_Updater.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

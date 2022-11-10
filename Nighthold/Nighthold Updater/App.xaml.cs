@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MagicStorm_Updater
+namespace Nighthold_Updater
 {
     /// <summary>
     /// Interaction logic for App.xaml

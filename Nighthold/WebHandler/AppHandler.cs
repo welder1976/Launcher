@@ -470,7 +470,7 @@ namespace WebHandler
             public long VP { get; set; }
         }
 
-        public static class AccountBalanceHandler
+        public partial class AccountBalance
         {
             public static List<AccountBalance> FromJson(string json) => JsonConvert.DeserializeObject<List<AccountBalance>>(json, Converter.Settings);
         }

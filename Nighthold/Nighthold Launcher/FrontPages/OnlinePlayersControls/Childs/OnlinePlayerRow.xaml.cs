@@ -1,8 +1,8 @@
-﻿using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.Nighthold;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace MagicStorm_Launcher.FrontPages.OnlinePlayersControls.Childs
+namespace Nighthold_Launcher.FrontPages.OnlinePlayersControls.Childs
 {
     /// <summary>
     /// Interaction logic for OnlinePlayerRow.xaml

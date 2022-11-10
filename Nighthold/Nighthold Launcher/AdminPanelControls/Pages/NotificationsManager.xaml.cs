@@ -1,6 +1,6 @@
-﻿using MagicStorm_Launcher.AdminPanelControls.Childs;
-using MagicStorm_Launcher.AdminPanelControls.Windows;
-using MagicStorm_Launcher.Nighthold;
+﻿using Nighthold_Launcher.AdminPanelControls.Childs;
+using Nighthold_Launcher.AdminPanelControls.Windows;
+using Nighthold_Launcher.Nighthold;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Xml;
 using WebHandler;
 
-namespace MagicStorm_Launcher.AdminPanelControls.Pages
+namespace Nighthold_Launcher.AdminPanelControls.Pages
 {
     /// <summary>
     /// Interaction logic for NotificationsManager.xaml
@@ -37,7 +37,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
             {
 
                 var notificationsCollection = NotificationsClass.NotificationsListAsAdmin.FromJson(
-                    await NotificationsClass.GetNotificationsListAsAdminJson(MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAdminPanel.SecKey));
+                    await NotificationsClass.GetNotificationsListAsAdminJson(NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAdminPanel.SecKey));
                 WPNotifications.Children.Clear();
                 if (notificationsCollection != null)
                 {
@@ -64,7 +64,7 @@ namespace MagicStorm_Launcher.AdminPanelControls.Pages
                     pAdminPanel.ShowActionMessage($"Creating notification \"{editor.Subject.Text}\".");
 
                     var json = NotificationsClass.NotificationCreate.FromJson(await NotificationsClass.GetNotificationCreateResponseJson(
-                        MagicStormLauncher.LoginUsername, MagicStormLauncher.LoginPassword, pAdminPanel.SecKey,
+                        NightholdLauncher.LoginUsername, NightholdLauncher.LoginPassword, pAdminPanel.SecKey,
                         editor.Subject.Text, editor.Message.Text, editor.ImageUrl.Text, editor.RedirectUrl.Text, editor.AccountID.Text));
 
                     pAdminPanel.ShowActionMessage(json.ResponseMsg);
